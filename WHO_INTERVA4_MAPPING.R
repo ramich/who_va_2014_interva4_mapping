@@ -1,6 +1,6 @@
-## TEST VA WHO <-> InterVa4 mapping
+## WHO VA 2014 <-> InterVA4 mapping
 
-cat("\nWHO VA Instrument -> InterVA4 Mapping\n\n")
+cat("\nWHO VA Instrument 2014 -> InterVA4 Mapping\n\n")
 
 #Clear variables
 rm(list=ls(all=TRUE)) 
@@ -164,7 +164,7 @@ grabAllVariables()
 #who_var = "unknownvar"
 
 who_n = nrow(mapping)
-who_n = 43 # Limit to first x entries for testing purposes
+#who_n = 227 # Limit to first x entries for testing purposes
 counter = 1
 x <- foreach(i=1:who_n) %do%{	
 	##Assign who variable

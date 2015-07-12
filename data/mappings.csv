@@ -44,379 +44,203 @@ InterVA4;InterVA variable;Question;;WHOVA2014;;Question;;Threshold;Note
 2010;ac_fever;Did (s)he have fever for less than 2 weeks before death?;;id3B110;;How many days did the fever last?;;id3B100 == 'yes' && id3B110 < 14;
 2020;ch_fever;Did (s)he have fever for 2 weeks or more before death?;;id3B110;;How many days did the fever last?;;id3B100 == 'yes' && id3B110 >= 14;
 2030;night_sw;Did (s)he have night sweats?;;id3B120;;Did (s)he have night sweats?;;id3B120 == 'yes';
-2040;cough;Did (s)he have a cough?;;id3B130;;Did (s)he have a cough?;;selected 'yes';
-;;;;;;;;selected 'no';
-2050;ac_cough;Did (s)he have a cough for less than 3 weeks before death?;;id3B140;;For how many days did (s)he have a cough?;;id3B140 < 21;
-2060;ch_cough;Did (s)he have a cough for 3 weeks or more before death?;;id3B140;;For how many days did (s)he have a cough?;;id3B140 >= 21;
-2070;pr_cough;Was the cough productive with sputum?;;id3B150;;Was the cough productive, with sputum?;;selected 'yes';
-;;;;;;;;selected 'no';
-2080;bl_cough;Did (s)he cough up blood?;;id3B160;;Did (s)he cough up blood?;;selected 'yes';
-;;;;;;;;selected 'no';
-2090;whoop;Did (s)he make a whooping sound when coughing?;;id3B170;;Did (s)he make a whooping sound when coughing?;;selected 'yes';
-;;;;;;;;selected 'no';
-2100;breath;Did (s)he have any breathing problem?;;id3B180;;Did (s)he have any breathing problem?;;selected 'yes';
-;;;;;;;;selected 'no';
-2110;rapid_br;Did (s)he have fast breathing?;;id3B190;;During the illness that led to death, did (s)he have fast breathing?;;selected 'yes';"If the ""any breathing problem"" indicator is selected, select this one if the deceased was an infant or child who was breathing much faster than normal."
-;;;;;;;;selected 'no';
-2120;ac_rpbr;Did (s)he have fast breathing for less than 2 weeks?;;id3B200;;For how many days did the fast breathing last?;;id3B200 < 14;
-2130;ch_rpbr;Did (s)he have fast breathing for 2 weeks or more?;;id3B200;;For how many days did the fast breathing last?;;id3B200 >= 14;
-2140;br_less;Did (s)he have breathlessness?;;id3B210;;Did (s)he have breathlessness?;;selected 'yes';
-;;;;;;;;selected 'no';
-2150;ac_brl;Did (s)he have breathlessness for less than 2 weeks?;;id3B220;;For how many weeks did (s)he have breathlessness?;;id3B220 < 2;
-2160;ch_brl;Did (s)he have breathlessness for 2 weeks or more?;;id3B220;;For how many weeks did (s)he have breathlessness?;;id3B220 >= 2;
-2170;exert_br;Was (s)he unable to carry out daily routines due to breathlessness?;;id3B230;;Was (s)he unable to carry out daily routines due to breathlessness?;;selected 'yes';
-;;;;;;;;selected 'no';
-2180;lying_br;Was (s)he breathless while lying flat?;;id3B240;;Was (s)he breathless while lying flat?;;selected 'yes';
-;;;;;;;;selected 'no';
-2190;chest_in;Did you see the lower chest wall/ribs being pulled in as the child breathed?;;id3B250;;Did you see the lower chest wall/ribs being pulled in as the child breathed?;;selected 'yes';
-;;;;;;;;selected 'no';
-2200;wheeze;Did (s)he have noisy breathing (grunting or wheezing)?;;id3B260;;During the illness that led to death did his/her breathing sound like any of the following:;;selected 'stridor';
-;;;;;;;;selected 'grunting';
-;;;;;;;;selected 'wheezing';
-;;;;;;;;selected 'no';
-2210;ch_pain;Did (s)he have severe chest pain?;;id3B270;;Did (s)he have severe chest pain?;;selected 'yes';
-;;;;;;;;selected 'no';
-2220;yellow;Did (s)he have yellow discoloration of the eyes?;;id3B750;;Did (s)he have yellow discoloration of the eyes?;;selected 'yes';
-;;;;;;;;selected 'no';
-2230;diarr;Did (s)he have diarrhoea?;;id3B280;;Did (s)he have diarrhoea?;;selected 'yes';
-;;;;;;;;selected 'no';
-2240;ac_diarr;Did (s)he have diarrhoea for less than 2 weeks?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B290 < 14;
-2250;pe_diarr;Did (s)he have diarrhoea for 2 to 4 weeks?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B290 >= 14 && id3B290 < 4*7;Select this if the diarrhoea lasted for 2 to 4 weeks, not necessarily every day
-2260;ch_diarr;Did (s)he have diarrhoea for 4 weeks or more?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B290 >= 4*7;
-2270;bl_diarr;At any time during the final illness was there blood in the stools?;;id3B300;;At any time during the final illness was there blood in the stools?;;selected 'yes';
-;;;;;;;;selected 'no';
-2280;vomiting;Did (s)he vomit?;;id3B310;;Did (s)he vomit?;;selected 'yes';
-;;;;;;;;selected 'no';
-2290;bl_vomit;"Did (s)he vomit ""coffee grounds"" or bright red/blood?";;id3B320;;Did (s)he vomit blood?;;selected 'yes';
-;;;;;;;;selected 'no';
-;;;OR;id3B325;;Was the vomit black?;;selected 'yes';
-;;;;;;;;selected 'no';
-2300;abdom;Did (s)he have any abdominal problem?;;id3B330;;Did (s)he have any abdominal problem?;;selected 'yes';
-;;;;;;;;selected 'no';
-2310;abd_pain;Did (s)he have severe abdominal pain?;;id3B340;;Did (s)he have severe abdominal pain?;;selected 'yes';
-;;;;;;;;selected 'no';
-2320;ac_abdp;Did the abdominal pain last for less than 2 weeks?;;id3B350;;For how many days before death did (s)he have severe abdominal pain?;;id3B350 < 14;
-2330;ch_abdp;Did the abdominal pain last for 2 weeks or more?;;id3B350;;For how many days before death did (s)he have severe abdominal pain?;;id3B350 >= 14;
-2340;swe_abd;Did (s)he have a more than usually protruding abdomen?;;id3B360;;Did (s)he have a more than usually protruding abdomen?;;selected 'yes';
-;;;;;;;;selected 'no';
-2350;ac_swab;Did (s)he have a more than usually protruding abdomen for less than 2 weeks?;;id3B370;;For how many days did (s)he have a more than usually protruding abdomen?;;id3B370 < 14;
+2040;cough;Did (s)he have a cough?;;id3B130;;Did (s)he have a cough?;;id3B130 == 'yes';
+2050;ac_cough;Did (s)he have a cough for less than 3 weeks before death?;;id3B140;;For how many days did (s)he have a cough?;;id3B130 == 'yes' && id3B140 < 21;
+2060;ch_cough;Did (s)he have a cough for 3 weeks or more before death?;;id3B140;;For how many days did (s)he have a cough?;;id3B130 == 'yes' && id3B140 >= 21;
+2070;pr_cough;Was the cough productive with sputum?;;id3B150;;Was the cough productive, with sputum?;;id3B150 == 'yes';
+2080;bl_cough;Did (s)he cough up blood?;;id3B160;;Did (s)he cough up blood?;;id3B160 == 'yes';
+2090;whoop;Did (s)he make a whooping sound when coughing?;;id3B170;;Did (s)he make a whooping sound when coughing?;;id3B170 == 'yes';
+2100;breath;Did (s)he have any breathing problem?;;id3B180;;Did (s)he have any breathing problem?;;id3B180 == 'yes';
+2110;rapid_br;Did (s)he have fast breathing?;;id3B190;;During the illness that led to death, did (s)he have fast breathing?;;id3B190 == 'yes';"If the ""any breathing problem"" indicator is selected, select this one if the deceased was an infant or child who was breathing much faster than normal."
+2120;ac_rpbr;Did (s)he have fast breathing for less than 2 weeks?;;id3B200;;For how many days did the fast breathing last?;;id3B190 == 'yes' && id3B200 < 14;
+2130;ch_rpbr;Did (s)he have fast breathing for 2 weeks or more?;;id3B200;;For how many days did the fast breathing last?;;id3B190 == 'yes'&& id3B200 >= 14;
+2140;br_less;Did (s)he have breathlessness?;;id3B210;;Did (s)he have breathlessness?;;id3B210 == 'yes';
+2150;ac_brl;Did (s)he have breathlessness for less than 2 weeks?;;id3B220;;For how many weeks did (s)he have breathlessness?;;id3B210 == 'yes' && id3B220 < 2;
+2160;ch_brl;Did (s)he have breathlessness for 2 weeks or more?;;id3B220;;For how many weeks did (s)he have breathlessness?;;id3B210 == 'yes' &&id3B220 >= 2;
+2170;exert_br;Was (s)he unable to carry out daily routines due to breathlessness?;;id3B230;;Was (s)he unable to carry out daily routines due to breathlessness?;;id3B180 == 'yes' && id3B230 == 'yes';
+2180;lying_br;Was (s)he breathless while lying flat?;;id3B240;;Was (s)he breathless while lying flat?;;id3B180 == 'yes' && id3B240 == 'yes';
+2190;chest_in;Did you see the lower chest wall/ribs being pulled in as the child breathed?;;id3B250;;Did you see the lower chest wall/ribs being pulled in as the child breathed?;;id3B250 == 'yes';
+2200;wheeze;Did (s)he have noisy breathing (grunting or wheezing)?;;id3B260;;During the illness that led to death did his/her breathing sound like any of the following:;;(id3B180 == 'yes' && id3B260 == 'stridor') || (id3B180 == 'yes' && id3B260 == 'grunting') || (id3B180 == 'yes' && id3B260 == 'wheezing');
+2210;ch_pain;Did (s)he have severe chest pain?;;id3B270;;Did (s)he have severe chest pain?;;id3B270 == 'yes';
+2220;yellow;Did (s)he have yellow discoloration of the eyes?;;id3B750;;Did (s)he have yellow discoloration of the eyes?;;id3B750 == 'yes';
+2230;diarr;Did (s)he have diarrhoea?;;id3B280;;Did (s)he have diarrhoea?;;id3B280 == 'yes';
+2240;ac_diarr;Did (s)he have diarrhoea for less than 2 weeks?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B280 == 'yes' && id3B290 < 14;
+2250;pe_diarr;Did (s)he have diarrhoea for 2 to 4 weeks?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B280 == 'yes' && id3B290 >= 14 && id3B290 < 4*7;Select this if the diarrhoea lasted for 2 to 4 weeks, not necessarily every day
+2260;ch_diarr;Did (s)he have diarrhoea for 4 weeks or more?;;id3B290;;For how many days did (s)he have diarrhoea?;;id3B280 == 'yes' && id3B290 >= 4*7;
+2270;bl_diarr;At any time during the final illness was there blood in the stools?;;id3B300;;At any time during the final illness was there blood in the stools?;;id3B280 == 'yes' && id3B300 == 'yes';
+2280;vomiting;Did (s)he vomit?;;id3B310;;Did (s)he vomit?;;id3B310 == 'yes';
+2290;bl_vomit;"Did (s)he vomit ""coffee grounds"" or bright red/blood?";;id3B320;;Did (s)he vomit blood?;;id3B310 == 'yes' && (id3B320 == 'yes' || id3B325 == 'yes');
+2300;abdom;Did (s)he have any abdominal problem?;;id3B330;;Did (s)he have any abdominal problem?;;id3B330 == 'yes';
+2310;abd_pain;Did (s)he have severe abdominal pain?;;id3B340;;Did (s)he have severe abdominal pain?;;id3B330 == 'yes' && id3B340 == 'yes';
+2320;ac_abdp;Did the abdominal pain last for less than 2 weeks?;;id3B350;;For how many days before death did (s)he have severe abdominal pain?;;id3B340 == 'yes' && id3B350 >= 0 && id3B350 < 14;
+2330;ch_abdp;Did the abdominal pain last for 2 weeks or more?;;id3B350;;For how many days before death did (s)he have severe abdominal pain?;;id3B340== 'yes' && id3B350 >= 14;
+2340;swe_abd;Did (s)he have a more than usually protruding abdomen?;;id3B360;;Did (s)he have a more than usually protruding abdomen?;;id3B360 == 'yes';
+2350;ac_swab;Did (s)he have a more than usually protruding abdomen for less than 2 weeks?;;id3B370;;For how many days did (s)he have a more than usually protruding abdomen?;;id3B370 >= 0 && id3B370 < 14;
 2360;ch_swab;Did (s)he have a more than usually protruding abdomen for 2 weeks or more?;;id3B370;;For how many days did (s)he have a more than usually protruding abdomen?;;id3B370 >= 14;
-2370;abd_mass;Did (s)he have any lump inside the abdomen?;;id3B380;;Did (s)he have any mass in the abdomen?;;selected 'yes';
-;;;;;;;;selected 'no';
-2380;ac_abdm;Did (s)he have a lump inside the abdomen for less than 2 weeks?;;id3B390;;For how many days before death did (s)he have a mass in the abdomen?;;id3B390 < 14;
-2390;ch_abdm;Did (s)he have a lump inside the abdomen for 2 weeks or more?;;id3B390;;For how many days before death did (s)he have a mass in the abdomen?;;id3B390 >= 14;
-2400;headache;Did (s)he have a severe headache?;;id3B400;;Did (s)he have a severe headache?;;selected 'yes';
-;;;;;;;;selected 'no';
-2410;skin;Did (s)he have any skin problems?;;id3B530;;Did (s)he have any skin problems?;;selected 'yes';
-;;;;;;;;selected 'no';
-2420;skin_les;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;id3B540;;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;selected 'yes';
-;;;;;;;;selected 'no';
-2430;sk feet;Did _ ( )s he have any , ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B550;;Did (s)he have any ulcers, abscess or sores on the feet that were not also on other parts of the body?;;selected 'yes';
-;;;;;;;;selected 'no';
-2440;rash;During the illness that led to death, did (s)he have any skin rash?;;id3B560;;During the illness that led to death, did (s)he have any skin rash?;;selected 'yes';
-;;;;;;;;selected 'no';
-2450;ac_rash;Did (s)he have the skin rash for less than 1 week?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B570 < 7;
-2460;ch_rash;Did (s)he have the skin rash for 1 week or more?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B570 >= 7;
-2470;measrash;Did (s)he have measles rash?;;id3B580;;Did (s)he have measles rash (use local term)?;;selected 'yes';
-;;;;;;;;selected 'no';
-2480;herpes;Did (s)he ever have shingles or herpes zoster?;;id3B590;;Did (s)he ever have shingles or herpes zoster?;;selected 'yes';
-;;;;;;;;selected 'no';
-2490;stiff_neck;Did (s)he have a stiff or painful neck?;;id3B405;;Did (s)he have a stiff neck during illness that led to death?;;selected 'yes';
-;;;;;;;;selected 'no';
-;;;OR;id3B409;;Did (s)he have a painful neck during the illness that led to death?;;selected 'yes';
-;;;;;;;;selected 'no';
-2500;ac_stnk;Did (s)he have a stiff or painful neck for less than 1 week?;;id3B407;;For how many days before death did (s)he have stiff neck?;;id3B407 < 7;
-;;;OR;id3B410;;For how many days before death did (s)he have a painful neck?;;id3B410 < 7;
-2510;ch_stnk;Did (s)he have a stiff or painful neck for 1 week or more?;;id3B407;;For how many days before death did (s)he have stiff neck?;;id3B407 >= 7;
-;;;OR;id3B410;;For how many days before death did (s)he have a painful neck?;;id3B410 >= 7;
-2520;coma;Was (s)he unconscious for more than 24 hours before death?;;id3B440;;Was (s)he unconscious for more than 24 hours before death?;;selected 'yes';
-;;;;;;;;selected 'no';
-2530;co_ons;Did the unconsciousness start suddenly (at least within a single day)?;;id3B450;;Did the unconsciousness start suddenly, quickly (at least within a single day)?;;selected 'yes';
-;;;;;;;;selected 'no';
-2540;convul;Did (s)he have convulsions?;;id3B460;;Did (s)he have convulsions?;;selected 'yes';
-;;;;;;;;selected 'no';
-2550;ac_conv;Did the convulsions last for less than 10 minutes;;id3B470;;For how many minutes did the convulsions last?;;id3B470 < 10;
-2560;ch_conv;Did the convulsions last for 10 minutes or more?;;id3B470;;For how many minutes did the convulsions last?;;id3B470 >= 10;
-2570;unc_con;Did (s)he become unconscious immediately after the convulsion?;;id3B480;;Did (s)he become unconscious immediately after the convulsion?;;selected 'yes';
-;;;;;;;;selected 'no';
-2580;urine;Did (s)he have any urine problems?;;id3B490;;Did (s)he have any urine problems?;;selected 'yes';
-;;;;;;;;selected 'no';
-2590;uri_ret;Did (s)he pass no urine at all?;;id3B500;;Did (s)he pass no urine at all?;;selected 'yes';
-;;;;;;;;selected 'no';
-2600;exc_urine;Did (s)he go to urinate more often than usual?;;id3B510;;Did (s)he go to urinate more often than usual?;;selected 'yes';
-;;;;;;;;selected 'no';
-2610;uri_haem;During the final illness did (s)he ever pass blood in the urine?;;id3B520;;During the final illness did (s)he ever pass blood in the urine?;;selected 'yes';
-;;;;;;;;selected 'no';
-2620;wt_loss;Did (s)he have noticeable weight loss?;;id3B610;;Did (s)he have noticeable weight loss?;;selected 'yes';
-;;;;;;;;selected 'no';
-2630;wasting;Was (s)he severely thin or wasted?;;id3B620;;Was (s)he severely thin or wasted?;;selected 'yes';
-;;;;;;;;selected 'no';
-2640;or_cand;Did (s)he have mouth sores or white patches in the mouth or on the tongue?;;id3B630;;During the illness that led to death, did s/he have a whitish rash inside the mouth or on the tongue?;;selected 'yes';
-;;;;;;;;selected 'no';
-2650;rigidity;Did (s)he have stiffness of the whole body or was unable to open the mouth?;;id3B640;;Did (s)he have stiffness of the whole body or was unable to open the mouth?;;selected 'yes';
-;;;;;;;;selected 'no';
-2660;swell;Did (s)he have any lumps?;;id3B670;;Did (s)he have any lumps?;;selected 'yes';
-;;;;;;;;selected 'no';
-2670;swe_oral;Did (s)he have any lumps or lesions in the mouth?;;id3B680;;Did (s)he have any lumps or lesions in the mouth?;;selected 'yes';
-;;;;;;;;selected 'no';
-2680;swe_neck;Did (s)he have any lumps on the neck?;;id3B690;;Did (s)he have any lumps on the neck?;;selected 'yes';
-;;;;;;;;selected 'no';
-2690;swe_armp;Did (s)he have any lumps on the armpit?;;id3B700;;Did (s)he have any lumps on the armpit?;;selected 'yes';
-;;;;;;;;selected 'no';
-2700;swe_breast;Did she have an ulcer or swelling in the breast?;;id3B720;;Did she have any swelling or lump in the breast?;;selected 'yes';
-;;;;;;;;selected 'no';
-2710;swe_gen;Did (s)he have any lumps on the groin?;;id3B710;;Did (s)he have any lumps on the groin?;;selected 'yes';
-;;;;;;;;selected 'no';
-2720;swe_oth;Did (s)he have swelling (puffiness) of the face?;;id3B650;;Did (s)he have puffiness of the face?;;selected 'yes';
-;;;;;;;;selected 'no';
-2730;swe_legs;Did (s)he have both feet swollen?;;id3B660;;Did (s)he have both feet swollen?;;selected 'yes';
-;;;;;;;;selected 'no';
-2740;anaemia;Did (s)he look pale (thinning/lack of blood) or have pale palms, eyes or nail beds?;;id3B770;;Did (s)he look pale (thinning/lack of blood) or have pale palms, eyes or nail beds?;;selected 'yes';
-;;;;;;;;selected 'no';
-2750;exc_drink;Did (s)he drink a lot more water than usual?;;id3B790;;Did (s)he drink a lot more water than usual?;;selected 'yes';
-;;;;;;;;selected 'no';
-2760;hair;Did her/his hair colour change to reddish or yellowish?;;id3B760;;Did her/his hair change in color to a reddish or yellowish color?;;selected 'yes';
-;;;;;;;;selected 'no';
-2770;paral_one;Did (s)he have paralysis of one side of the body?;;id3B730;;Did s(he have paralysis of only one side of the body?;;selected 'yes';
-;;;;;;;;selected 'no';
-2780;eye_sunk;Did (s)he have sunken eyes?;;id3B780;;Did (s)he have sunken eyes?;;selected 'yes';
-;;;;;;;;selected 'no';
-2790;bl_orif;Did (s)he bleed from the nose, mouth or anus?;;id3B600;;Did (s)he bleed from the nose, mouth or anus?;;selected 'yes';
-;;;;;;;;selected 'no';
-2800;vb_bet;Did she have excessive vaginal bleeding in between menstrual periods?;;id3B800;;Did she have excessive vaginal bleeding in between menstrual periods?;;selected 'yes';
-;;;;;;;;selected 'no';
-2810;vb_men;Did her vaginal bleeding stopped naturally during menopause?;;id3B810;;Did her menstrual period stop naturally because of menopause?;;selected 'yes';
-;;;;;;;;selected 'no';
-2820;vb_after;Did she had vaginal bleeding after menopause?;;id3B820;;Did she have vaginal bleeding after cessation of menstruation?;;selected 'yes';
-;;;;;;;;selected 'no';
-2830;diff_sw;Did (s)he have difficulty or pain while swallowing liquids?;;id3B740;;Was the difficulty with swallowing with solids, liquids, or both?;;selected 'yes';
-;;;;;;;;selected 'no';
-3000;not_preg;Was she neither pregnant, nor delivered, within 6 weeks of her death?;;id3C110;;Was she pregnant at the time of death?;;selected 'no';
-;;;AND;id3C120;;Did she die within 6 weeks of delivery, abortion or miscarriage?;;selected 'no';
-;;;OR;id3C135;;Please confirm: When she died, she was NEITHER pregnant NOR had recently been pregnant NOR had recently delivered when she died - is that right?;;selected 'yes';
-;;;;;;;;selected 'no';
-3010;pregnant;Was she pregnant at the time of death?;;id3C110;;Was she pregnant at the time of death?;;selected 'yes';
-;;;;;;;;selected 'no';
-3020;del_6wks;Did she die within 6 weeks of giving birth?;;id3C120;;Did she die within 6 weeks of delivery, abortion or miscarriage?;;selected 'yes';
-;;;;;;;;selected 'no';
-3030;pend_6w;Did she die 6 weeks within a pregnancy that lasted less than 6 months?;;id3C120;;Did she die within 6 weeks of delivery, abortion or miscarriage?;;selected 'yes';
-;;;;id3C125;;For how many months was she pregnant?;AND;id3C125 < 6;
+2370;abd_mass;Did (s)he have any lump inside the abdomen?;;id3B380;;Did (s)he have any mass in the abdomen?;;id3B330 == 'yes' && id3B380 == 'yes';
+2380;ac_abdm;Did (s)he have a lump inside the abdomen for less than 2 weeks?;;id3B390;;For how many days before death did (s)he have a mass in the abdomen?;;id3B380 == 'yes' && id3B390 >= 0 && id3B390 < 14;
+2390;ch_abdm;Did (s)he have a lump inside the abdomen for 2 weeks or more?;;id3B390;;For how many days before death did (s)he have a mass in the abdomen?;;id3B380 == 'yes' && id3B390 >= 14;
+2400;headache;Did (s)he have a severe headache?;;id3B400;;Did (s)he have a severe headache?;;id3B400 == 'yes';
+2410;skin;Did (s)he have any skin problems?;;id3B530;;Did (s)he have any skin problems?;;id3B530 == 'yes';
+2420;skin_les;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;id3B540;;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;id3B530 == 'yes' && id3B540 == 'yes';
+2430;sk feet;Did (s)he have any , ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B550;;Did (s)he have any ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B530 == 'yes' && id3B550 == 'yes';
+2440;rash;During the illness that led to death, did (s)he have any skin rash?;;id3B560;;During the illness that led to death, did (s)he have any skin rash?;;id3B530 == 'yes' && id3B560 == 'yes';
+2450;ac_rash;Did (s)he have the skin rash for less than 1 week?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B560 == 'yes' && id3B570 >= 0 && id3B570 < 7;
+2460;ch_rash;Did (s)he have the skin rash for 1 week or more?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B560 == 'yes' && id3B570 >= 7;
+2470;measrash;Did (s)he have measles rash?;;id3B580;;Did (s)he have measles rash (use local term)?;;id3B530 == 'yes' && id3B580 == 'yes';
+2480;herpes;Did (s)he ever have shingles or herpes zoster?;;id3B590;;Did (s)he ever have shingles or herpes zoster?;;id3B530 == 'yes' && id3B590 == 'yes';
+2490;stiff_neck;Did (s)he have a stiff or painful neck?;;id3B405;;Did (s)he have a stiff neck during illness that led to death?;;id3B405 == 'yes' || id3B409 == 'yes';
+2500;ac_stnk;Did (s)he have a stiff or painful neck for less than 1 week?;;id3B407;;For how many days before death did (s)he have stiff neck?;;(id3B405 == 'yes' || id3B409 == 'yes') && ((id3B407 >= 0 && id3B407 < 7) || (id3B410 >= 0 && id3B410 < 7));
+2510;ch_stnk;Did (s)he have a stiff or painful neck for 1 week or more?;;id3B407;;For how many days before death did (s)he have stiff neck?;;(id3B405 == 'yes' || id3B409 == 'yes') && (id3B407 >= 7 || id3B410 >= 7);
+2520;coma;Was (s)he unconscious for more than 24 hours before death?;;id3B440;;Was (s)he unconscious for more than 24 hours before death?;;id3B440 == 'yes';
+2530;co_ons;Did the unconsciousness start suddenly (at least within a single day)?;;id3B450;;Did the unconsciousness start suddenly, quickly (at least within a single day)?;;id3B440 == 'yes' && id3B450 == 'yes';
+2540;convul;Did (s)he have convulsions?;;id3B460;;Did (s)he have convulsions?;;id3B460 == 'yes';
+2550;ac_conv;Did the convulsions last for less than 10 minutes;;id3B470;;For how many minutes did the convulsions last?;;id3B460 == 'yes' && id3B470 >= 0 && id3B470 < 10;
+2560;ch_conv;Did the convulsions last for 10 minutes or more?;;id3B470;;For how many minutes did the convulsions last?;;id3B460 == 'yes' && id3B470 >= 10;
+2570;unc_con;Did (s)he become unconscious immediately after the convulsion?;;id3B480;;Did (s)he become unconscious immediately after the convulsion?;;id3B460 == 'yes' && id3B480 == 'yes';
+2580;urine;Did (s)he have any urine problems?;;id3B490;;Did (s)he have any urine problems?;;id3B490 == 'yes';
+2590;uri_ret;Did (s)he pass no urine at all?;;id3B500;;Did (s)he pass no urine at all?;;id3B490 == 'yes' && id3B500 == 'yes';
+2600;exc_urine;Did (s)he go to urinate more often than usual?;;id3B510;;Did (s)he go to urinate more often than usual?;;id3B490 == 'yes' && id3B510 == 'yes';
+2610;uri_haem;During the final illness did (s)he ever pass blood in the urine?;;id3B520;;During the final illness did (s)he ever pass blood in the urine?;;id3B490 == 'yes' && id3B520 == 'yes';
+2620;wt_loss;Did (s)he have noticeable weight loss?;;id3B610;;Did (s)he have noticeable weight loss?;;id3B610 == 'yes';
+2630;wasting;Was (s)he severely thin or wasted?;;id3B620;;Was (s)he severely thin or wasted?;;id3B610 == 'yes' && id3B620 == 'yes';
+2640;or_cand;Did (s)he have mouth sores or white patches in the mouth or on the tongue?;;id3B630;;During the illness that led to death, did s/he have a whitish rash inside the mouth or on the tongue?;;id3B630 == 'yes';
+2650;rigidity;Did (s)he have stiffness of the whole body or was unable to open the mouth?;;id3B640;;Did (s)he have stiffness of the whole body or was unable to open the mouth?;;id3B640 == 'yes';
+2660;swell;Did (s)he have any lumps?;;id3B670;;Did (s)he have any lumps?;;id3B670 == 'yes';
+2670;swe_oral;Did (s)he have any lumps or lesions in the mouth?;;id3B680;;Did (s)he have any lumps or lesions in the mouth?;;id3B670 == 'yes' && id3B680 == 'yes';
+2680;swe_neck;Did (s)he have any lumps on the neck?;;id3B690;;Did (s)he have any lumps on the neck?;;id3B670 == 'yes' && id3B690 == 'yes';
+2690;swe_armp;Did (s)he have any lumps on the armpit?;;id3B700;;Did (s)he have any lumps on the armpit?;;id3B670 == 'yes' && id3B700 == 'yes';
+2700;swe_breast;Did she have an ulcer or swelling in the breast?;;id3B720;;Did she have any swelling or lump in the breast?;;id3B670 == 'yes' && id3B720 == 'yes';
+2710;swe_gen;Did (s)he have any lumps on the groin?;;id3B710;;Did (s)he have any lumps on the groin?;;id3B670 == 'yes' && id3B710 == 'yes';
+2720;swe_oth;Did (s)he have swelling (puffiness) of the face?;;id3B650;;Did (s)he have puffiness of the face?;;id3B650 == 'yes';
+2730;swe_legs;Did (s)he have both feet swollen?;;id3B660;;Did (s)he have both feet swollen?;;id3B660 == 'yes';
+2740;anaemia;Did (s)he look pale (thinning/lack of blood) or have pale palms, eyes or nail beds?;;id3B770;;Did (s)he look pale (thinning/lack of blood) or have pale palms, eyes or nail beds?;;id3B770 == 'yes';
+2750;exc_drink;Did (s)he drink a lot more water than usual?;;id3B790;;Did (s)he drink a lot more water than usual?;;id3B790 == 'yes';
+2760;hair;Did her/his hair colour change to reddish or yellowish?;;id3B760;;Did her/his hair change in color to a reddish or yellowish color?;;id3B760 == 'yes';
+2770;paral_one;Did (s)he have paralysis of one side of the body?;;id3B730;;Did s(he have paralysis of only one side of the body?;;id3B730 == 'yes';
+2780;eye_sunk;Did (s)he have sunken eyes?;;id3B780;;Did (s)he have sunken eyes?;;id3B780 == 'yes';
+2790;bl_orif;Did (s)he bleed from the nose, mouth or anus?;;id3B600;;Did (s)he bleed from the nose, mouth or anus?;;id3B600 == 'yes';
+2800;vb_bet;Did she have excessive vaginal bleeding in between menstrual periods?;;id3B800;;Did she have excessive vaginal bleeding in between menstrual periods?;;id3B800 == 'yes';
+2810;vb_men;Did her vaginal bleeding stopped naturally during menopause?;;id3B810;;Did her menstrual period stop naturally because of menopause?;;id3B810 == 'yes';
+2820;vb_after;Did she had vaginal bleeding after menopause?;;id3B820;;Did she have vaginal bleeding after cessation of menstruation?;;id3B820 == 'yes';
+2830;diff_sw;Did (s)he have difficulty or pain while swallowing liquids?;;id3B740;;Was the difficulty with swallowing with solids, liquids, or both?;;id3B740 == 'yes';
+3000;not_preg;Was she neither pregnant, nor delivered, within 6 weeks of her death?;;id3C110;;Was she pregnant at the time of death?;;(id3C110 == 'no' && id3C120 == 'yes') || id3C135 == 'yes';
+3010;pregnant;Was she pregnant at the time of death?;;id3C110;;Was she pregnant at the time of death?;;id3C110 == 'yes';
+3020;del_6wks;Did she die within 6 weeks of giving birth?;;id3C120;;Did she die within 6 weeks of delivery, abortion or miscarriage?;;id3C120 == 'yes';
+3030;pend_6w;Did she die 6 weeks within a pregnancy that lasted less than 6 months?;;id3C120;;Did she die within 6 weeks of delivery, abortion or miscarriage?;;id3C120 == 'yes' && id3C125 >= 0 && id3C125 < 6;
 3040;first_p;Was this the woman's first pregnancy?;;id3C230;;How many births, including stillbirths, did she/the mother have before this baby?;;id3C230 == 0;
 3050;more4;Did she have four or more births, including stillbirths, before this pregnancy?;;id3C230;;How many births, including stillbirths, did she/the mother have before this baby?;;id3C230 >= 4;
-3060;cs_prev;Did she have any previous Caesarean section?;;id3C240;;Had she had any previous Caesarean section?;;selected 'yes';
-;;;;;;;;selected 'no';
-3070;multip;Did she die during or after a multiple pregnancy?;;id3C215;;Did she die during or after a multiple pregnancy?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
+3060;cs_prev;Did she have any previous Caesarean section?;;id3C240;;Had she had any previous Caesarean section?;;id3C240 == 'yes';
+3070;multip;Did she die during or after a multiple pregnancy?;;id3C215;;Did she die during or after a multiple pregnancy?;;id3C215 == 'yes';WHO ID changed
 3080;lab_24;Was she in labour for unusually long (more than 24 hours)?;;id3C370;;For how many hours was she in labour?;;id3C370 >= 24;
-3090;died_lab;Did she die during labour, but undelivered?;;id3C210;;Did she die during labour, and before delivery?;;selected 'yes';
-;;;;;;;;selected 'no';
-3100;death_24;Did she die within 24 hours after delivery;;id3C200;;Did she die within 24 hours after delivery?;;selected 'yes';
-;;;;;;;;selected 'no';
-3110;baby_al;Did she give birth to a live, healthy baby within 6 weeks of death?;;id3C213;;Did she give birth to a live baby (within 6 weeks of her death)?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-3120;breast_fd;Was she breastfeeding at death?;;id3C220;;Was she breastfeeding the child in the days before death?;;selected 'yes';
-;;;;;;;;selected 'no';
-3130;del_fac;Did she give birth in a health facility?;;id3C400;;Where did she give birth?;;selected 'hospital';
-;;;;;;;;selected 'other_health_facility';
-3140;del_home;Did she give birth at home?;;id3C400;;Where did she give birth?;;selected 'home';
-3150;del_else;Did she give birth elsewhere, e.g. on the way to a facility?;;id3C400;;Where did she give birth?;;selected 'on_route_to_hospital_or_facility';
-;;;;;;;OR;selected 'other';
-3160;prof_ass;Did she receive professional assistance during the delivery?;;id3C430;;Did she receive professional assistance during the delivery?;;selected 'yes';
-;;;;;;;;selected 'no';
-3170;del_norm;Did she have a normal vaginal delivery?;;id3C450;;Was the delivery normal vaginal, without forceps or vacuum?;;selected 'yes';
-;;;;;;;;selected 'no';
-3180;del_ass;Did she have an assisted delivery, with forceps/vacuum?;;id3C460;;Was the delivery vaginal, with forceps or vacuum?;;selected 'yes';
-;;;;;;;;selected 'no';
-3190;del_cs;Did she deliver by Caesarean section?;;id3C470;;Was the delivery a Caesarean section?;;selected 'yes';
-;;;;;;;;selected 'no';
-3200;baby_pos;Did she deliver or try to deliver an abnormally positioned baby?;;id3C365;;Did she deliver or try to deliver an abnormally positioned baby?;;selected 'yes';
-;;;;;;;;selected 'no';
-3205;mon_early;Was the baby born more than one month early?;;id3C480;;Was the baby born more than one month early?;;selected 'yes';
-;;;;;;;;selected 'no';
-3210;hyster;Did she have an operation to remove her uterus shortly before death?;;id3C440;;Did she have an operation to remove her uterus shortly before death?;;selected 'yes';
-;;;;;;;;selected 'no';
-3220;bpr_preg;During pregnancy, did she suffer from high blood pressure?;;id3C260;;During pregnancy, did she suffer from high blood pressure?;;selected 'yes';
-;;;;;;;;selected 'no';
-3230;fit_preg;During the last 3 months of pregnancy, did she suffer from convulsions?;;id3C280;;During the last 3 months of pregnancy, did she suffer from convulsions?;;selected 'yes';
-;;;;;;;;selected 'no';
-3240;vis_bl;During the last 3 months of pregnancy did she suffer from blurred vision?;;id3C290;;During the last 3 months of pregnancy did she suffer from blurred vision?;;selected 'yes';
-;;;;;;;;selected 'no';
-3250;bleed;Was there excessive vaginal bleeding during pregnancy or after delivery?;;id3C310;;Did she have excessive bleeding during pregnancy before labour started?;;selected 'yes';
-;;;;;;;;selected 'no';
-3260;e_bleed;Was there vaginal bleeding during the first 6 months of pregnancy?;;id3C320;;Was there vaginal bleeding during the first 6 months of pregnancy?;;selected 'yes';
-;;;;;;;;selected 'no';
-3270;s_bleed;Was there vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3C330;;Was there vaginal bleeding during the last 3 months of pregnancy but before labour started?;;selected 'yes';
-;;;;;;;;selected 'no';
-3280;d_bleed;Was there excessive vaginal bleeding during labour?;;id3C340;;Did she have excessive bleeding during labour or delivery?;;selected 'yes';
-;;;;;;;;selected 'no';
-3290;p_bleed;Was there excessive vaginal bleeding after delivering the baby?;;id3C350;;Did she have excessive bleeding after delivery or abortion?;;selected 'yes';
-;;;;;;;;selected 'no';
-3300;placent_r;Was the placenta not completely delivered?;;id3C360;;Was the placenta completely delivered?;;selected 'yes';
-;;;;;;;;selected 'no';
-3310;disch_sm;Did she have foul smelling vaginal discharge during pregnancy or after delivery?;;id3C270;;Did she have foul smelling vaginal discharge during pregnancy or after delivery?;;selected 'yes';
-;;;;;;;;selected 'no';
-3330;term_att;Did she attempt to terminate the pregnancy?;;id3C380;;Did she attempt to terminate the pregnancy?;;selected 'yes';
-;;;;;;;;selected 'no';
-3340;abort;Did she recently have a pregnancy that ended in an abortion (spontaneous or induced)?;;id3C390;;Did she recently have a pregnancy that ended in an abortion (spontaneous or induced)?;;selected 'yes';
-;;;;;;;;selected 'no';
-4000;born_early;Had the pregnancy lasted less than 34 weeks when the baby was born?;;id3D210;;How many months long was the pregnancy before the child was born?;;id3D210 < 9;Not accurate since WHO asks for month and InterVA wants Weeks
+3090;died_lab;Did she die during labour, but undelivered?;;id3C210;;Did she die during labour, and before delivery?;;id3C210 == 'yes';
+3100;death_24;Did she die within 24 hours after delivery;;id3C200;;Did she die within 24 hours after delivery?;;id3C200 == 'yes';
+3110;baby_al;Did she give birth to a live, healthy baby within 6 weeks of death?;;id3C213;;Did she give birth to a live baby (within 6 weeks of her death)?;;id3C213 == 'yes';WHO ID changed
+3120;breast_fd;Was she breastfeeding at death?;;id3C220;;Was she breastfeeding the child in the days before death?;;id3C220 == 'yes';
+3130;del_fac;Did she give birth in a health facility?;;id3C400;;Where did she give birth?;;id3C400 == 'hospital' || id3C400 == 'other_health_facility';
+3140;del_home;Did she give birth at home?;;id3C400;;Where did she give birth?;;id3C400 == 'home';
+3150;del_else;Did she give birth elsewhere, e.g. on the way to a facility?;;id3C400;;Where did she give birth?;;id3C400 == 'on_route_to_hospital_or_facility' || id3C400 == 'other';
+3160;prof_ass;Did she receive professional assistance during the delivery?;;id3C430;;Did she receive professional assistance during the delivery?;;id3C430 == 'yes';
+3170;del_norm;Did she have a normal vaginal delivery?;;id3C450;;Was the delivery normal vaginal, without forceps or vacuum?;;id3C450 == 'yes';
+3180;del_ass;Did she have an assisted delivery, with forceps/vacuum?;;id3C460;;Was the delivery vaginal, with forceps or vacuum?;;id3C460 == 'yes';
+3190;del_cs;Did she deliver by Caesarean section?;;id3C470;;Was the delivery a Caesarean section?;;id3C470 == 'yes';
+3200;baby_pos;Did she deliver or try to deliver an abnormally positioned baby?;;id3C365;;Did she deliver or try to deliver an abnormally positioned baby?;;id3C365 == 'yes';
+3205;mon_early;Was the baby born more than one month early?;;id3C480;;Was the baby born more than one month early?;;id3C480 == 'yes';
+3210;hyster;Did she have an operation to remove her uterus shortly before death?;;id3C440;;Did she have an operation to remove her uterus shortly before death?;;id3C480 == 'yes';
+3220;bpr_preg;During pregnancy, did she suffer from high blood pressure?;;id3C260;;During pregnancy, did she suffer from high blood pressure?;;id3C260 == 'yes';
+3230;fit_preg;During the last 3 months of pregnancy, did she suffer from convulsions?;;id3C280;;During the last 3 months of pregnancy, did she suffer from convulsions?;;id3C280 == 'yes';
+3240;vis_bl;During the last 3 months of pregnancy did she suffer from blurred vision?;;id3C290;;During the last 3 months of pregnancy did she suffer from blurred vision?;;id3C290 == 'yes';
+3250;bleed;Was there excessive vaginal bleeding during pregnancy or after delivery?;;id3C310;;Did she have excessive bleeding during pregnancy before labour started?;;id3C310 == 'yes';
+3260;e_bleed;Was there vaginal bleeding during the first 6 months of pregnancy?;;id3C320;;Was there vaginal bleeding during the first 6 months of pregnancy?;;id3C320 == 'yes';
+3270;s_bleed;Was there vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3C330;;Was there vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3C330 == 'yes';
+3280;d_bleed;Was there excessive vaginal bleeding during labour?;;id3C340;;Did she have excessive bleeding during labour or delivery?;;id3C340 == 'yes';
+3290;p_bleed;Was there excessive vaginal bleeding after delivering the baby?;;id3C350;;Did she have excessive bleeding after delivery or abortion?;;id3C350 == 'yes';
+3300;placent_r;Was the placenta not completely delivered?;;id3C360;;Was the placenta completely delivered?;;id3C360 == 'yes';
+3310;disch_sm;Did she have foul smelling vaginal discharge during pregnancy or after delivery?;;id3C270;;Did she have foul smelling vaginal discharge during pregnancy or after delivery?;;id3C270 == 'yes';
+3330;term_att;Did she attempt to terminate the pregnancy?;;id3C380;;Did she attempt to terminate the pregnancy?;;id3C380 == 'yes';
+3340;abort;Did she recently have a pregnancy that ended in an abortion (spontaneous or induced)?;;id3C390;;Did she recently have a pregnancy that ended in an abortion (spontaneous or induced)?;;id3C390 == 'yes';
+4000;born_early;Had the pregnancy lasted less than 34 weeks when the baby was born?;;id3D210;;How many months long was the pregnancy before the child was born?;;id3D210 >= 0 && id3D210 < 9;Not accurate since WHO asks for month and InterVA wants Weeks
 4010;born_3437;Had the pregnancy lasted between 34 and 37 weeks when the baby was born?;;id3D210;;How many months long was the pregnancy before the child was born?;;id3D210 == 9;Not accurate since WHO asks for month and InterVA wants Weeks
 4020;born_38;Had the pregnancy lasted more than 37 weeks when the baby was born?;;id3D210;;How many months long was the pregnancy before the child was born?;;id3D210 > 9;Not accurate since WHO asks for month and InterVA wants Weeks
-4030;ab_size;Was the baby of abnormal size?;;id3D180;;At birth, was the baby of usual size?;;selected 'yes';
-;;;;;;;;selected 'no';
-4040;born_small;Was the baby smaller than normal, weighing under 2.5 kg?;;id3D190;;At birth, was the baby smaller than usual, (weighing under 2.5 kg)?;;selected 'yes';
-;;;;;;;;selected 'no';
-4060;born_big;Was the baby larger than normal, weighing over 4.5 kg?;;id3D200;;At birth, was the baby larger than usual, (weighing over 4.5 kg)?;;selected 'yes';
-;;;;;;;;selected 'no';
-4070;twin;Was the child part of a multiple birth?;;id3D100;;Was the child part of a multiple  birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4080;comdel;Was the child born in a complicated delivery?;;;;;;;Mapping uncertain
-4090;cord;Was the umbilical cord wrapped several times (more than once) around the neck of the child at birth?;;id3D278;;Was the umbilical cord wrapped more than once around the neck of the child at birth?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4100;waters;Was the baby born 24 hours or more after the water broke?;;id3D253;;Was the baby born 24 hours or more after the water broke?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4110;move_lb;Did the baby stop moving in the womb before labour started?;;id3D251;;Did the baby stop moving in the womb before labour started?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4120;cyanosis;Was the baby blue in colour at birth?;;id3D280;;Was the baby blue in colour at birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4130;baby_br;Did the baby breathe after birth, even a little?;;id3D300;;Did the baby breathe immediately after birth, even a little?;;selected 'yes';
-;;;;;;;;selected 'no';
-4140;born_nobr;Was the baby given assistance to breathe at birth?;;id3D310;;Was the baby given assistance to breathe at birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4150;cried;Did the baby cry after birth, even if only a little bit?;;id3D290;;Did the baby cry immediately after birth, even if only a little bit?;;selected 'yes';
-;;;;;;;;selected 'no';
-4160;no_life;If the baby did not cry or breathe, was it born dead?;;id3D320;;If the baby didn't show any sign of life, was it born dead?;;selected 'yes';
-;;;;;;;;selected 'no';
-4170;mushy;Was the baby born macerated, that is, showed signs of decay?;;id3D330;;Was the dead baby macerated, that is, showed signs of decay?;;selected 'yes';
-;;;;;;;;selected 'no';
-4180;fed_d1;Was the baby able to suckle or bottle?feed within first 24 hours after birth?;;id3D340;;Was the baby able to suckle or bottle-feed within the first 24 hours after birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4190;st_suck;Did the baby stop suckling of bottle feeding 3 days after birth?;;id3D345;;Did the baby stop suckling?;;selected 'yes';
-;;;AND;id3D350;;How many days after birth did the baby stop suckling?;;id3D350 >= 3;
-4200;ab_posit;Did the baby's bottom, feet, arm or hand come into the vagina before its head?;;id3D277;;Did the baby's bottom, feet, arm or hand come out of the vagina before its head?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4210;conv_d1;Did the baby have convulsions starting within the first day of life?;;id3D360;;Did the baby have convulsions starting within the first 24 hours of life?;;selected 'yes';
-;;;;;;;;selected 'no';
-4220;conv_d2;Did the baby have convulsions starting on the second day or later after birth?;;id3D370;;Did the baby have convulsions starting more than 24 hours after birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4230;arch_b;Did the baby's body become stiff, with the back arched backwards?;;id3D380;;Did the baby's body become stiff, with the back arched backwards?;;selected 'yes';
-;;;;;;;;selected 'no';
-4240;font_hi;Did the child have a bulging or raised fontanelle?;;id3D390;;During the illness that led to death, did the baby have a bulging or raised fontanelle?;;selected 'yes';
-;;;;;;;;selected 'no';
-4250;font_lo;Did the child have a sunken fontanelle?;;id3D400;;During the illness that led to death, did the baby have a sunken fontanelle?;;selected 'yes';
-;;;;;;;;selected 'no';
-4260;unw_d1;Did the baby become unresponsive or unconscious soon after birth (within less than 24 hours)?;;id3D410;;Did the baby become unresponsive or unconscious soon after birth, within less than 24 hours?;;selected 'yes';
-;;;;;;;;selected 'no';
-4270;unw_d2;Did the baby become unresponsive or unconscious more than 1 day after birth?;;id3D420;;Did the baby become unresponsive or unconscious more than 24 hours after birth?;;selected 'yes';
-;;;;;;;;selected 'no';
-4280;cold;Did the baby become cold to the touch before it died?;;id3D430;;During the illness that led to death, did the baby become cold to touch?;;selected 'yes';
-;;;;;;;;selected 'no';
-4290;umbinf;Did the baby have redness or discharge from the umbilical cord stump?;;id3D440;;Did the baby have redness or discharge from the umbilical cord stump?;;selected 'yes';
-;;;;;;;;selected 'no';
-4300;b_yellow;Did the baby have yellow palms or soles?;;id3D450;;During the illness that led to death, did the baby have yellow skin, palms (hand) or soles (foot)?;;selected 'yes';
-;;;;;;;;selected 'no';
-4310;devel;Was the baby/the child not growing normally?;;id3D600;;Before the illness that led to death, was the baby/the child growing normally?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4320;born_malf;Did the baby/the child have any malformation?;;id3D230;;Was any part of the baby physically abnormal at time of delivery? (for example: body part too large or too small, additional growth on body)?;;selected 'yes';
-;;;;;;;;selected 'no';
-4330;mlf_bk;Did the baby/the child have a swelling/defect on the back?;;id3D240;;Did the baby/ child have a swelling or defect on the back?;;selected 'yes';
-;;;;;;;;selected 'no';
-4340;mlf_lh;Did the baby/the child have a very large head?;;id3D241;;Did the baby/ child have a very large head?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4350;mlf_sh;Did the baby/the child have a very small head?;;id3D242;;Did the baby/ child have a very small head?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4360;mttv;Did the mother receive tetanus toxoid (TT) vaccine?;;id3D265;;Did the mother receive tetanus toxoid (TT) vaccine?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4370;b_norm;Was baby born in a normal vaginal delivery?;;id3D258;;Was the delivery normal vaginal, without forceps or vacuum?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4380;b_assist;Was baby born with forceps/vacuum?;;id3D259;;Was the delivery vaginal, with forceps or vacuum?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4390;b_caes;Was baby delivered by Caesarean section?;;id3D260;;Was the delivery a Caesarean section?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4400;b_first;Was this baby born from the mother's first pregnancy?;;;;;;;Mapping unclear
+4030;ab_size;Was the baby of abnormal size?;;id3D180;;At birth, was the baby of usual size?;;id3D180 == 'no';
+4040;born_small;Was the baby smaller than normal, weighing under 2.5 kg?;;id3D190;;At birth, was the baby smaller than usual, (weighing under 2.5 kg)?;;id3D190 == 'yes';
+4060;born_big;Was the baby larger than normal, weighing over 4.5 kg?;;id3D200;;At birth, was the baby larger than usual, (weighing over 4.5 kg)?;;id3D200 == 'yes';
+4070;twin;Was the child part of a multiple birth?;;id3D100;;Was the child part of a multiple  birth?;;id3D100 == 'yes';
+4080;comdel;Was the child born in a complicated delivery?;;id3D100;;;;1==2;Mapping uncertain
+4090;cord;Was the umbilical cord wrapped several times (more than once) around the neck of the child at birth?;;id3D278;;Was the umbilical cord wrapped more than once around the neck of the child at birth?;;id3D278 == 'yes';WHO ID changed
+4100;waters;Was the baby born 24 hours or more after the water broke?;;id3D253;;Was the baby born 24 hours or more after the water broke?;;id3D253 == 'yes';WHO ID changed
+4110;move_lb;Did the baby stop moving in the womb before labour started?;;id3D251;;Did the baby stop moving in the womb before labour started?;;id3D251 == 'yes';WHO ID changed
+4120;cyanosis;Was the baby blue in colour at birth?;;id3D280;;Was the baby blue in colour at birth?;;id3D280 == 'yes';
+4130;baby_br;Did the baby breathe after birth, even a little?;;id3D300;;Did the baby breathe immediately after birth, even a little?;;id3D300 == 'yes';
+4140;born_nobr;Was the baby given assistance to breathe at birth?;;id3D310;;Was the baby given assistance to breathe at birth?;;id3D310 == 'yes';
+4150;cried;Did the baby cry after birth, even if only a little bit?;;id3D290;;Did the baby cry immediately after birth, even if only a little bit?;;id3D290 == 'yes';
+4160;no_life;If the baby did not cry or breathe, was it born dead?;;id3D320;;If the baby didn't show any sign of life, was it born dead?;;id3D320 == 'yes';
+4170;mushy;Was the baby born macerated, that is, showed signs of decay?;;id3D330;;Was the dead baby macerated, that is, showed signs of decay?;;id3D330 == 'yes';
+4180;fed_d1;Was the baby able to suckle or bottle?feed within first 24 hours after birth?;;id3D340;;Was the baby able to suckle or bottle-feed within the first 24 hours after birth?;;id3D340 == 'yes';
+4190;st_suck;Did the baby stop suckling of bottle feeding 3 days after birth?;;id3D345;;Did the baby stop suckling?;;id3D345 == 'yes' && id3D350 >= 3;
+4200;ab_posit;Did the baby's bottom, feet, arm or hand come into the vagina before its head?;;id3D277;;Did the baby's bottom, feet, arm or hand come out of the vagina before its head?;;id3D277 == 'yes';WHO ID changed
+4210;conv_d1;Did the baby have convulsions starting within the first day of life?;;id3D360;;Did the baby have convulsions starting within the first 24 hours of life?;;id3D360 == 'yes';
+4220;conv_d2;Did the baby have convulsions starting on the second day or later after birth?;;id3D370;;Did the baby have convulsions starting more than 24 hours after birth?;;id3D370 == 'yes';
+4230;arch_b;Did the baby's body become stiff, with the back arched backwards?;;id3D380;;Did the baby's body become stiff, with the back arched backwards?;;id3D380 == 'yes';
+4240;font_hi;Did the child have a bulging or raised fontanelle?;;id3D390;;During the illness that led to death, did the baby have a bulging or raised fontanelle?;;id3D390 == 'yes';
+4250;font_lo;Did the child have a sunken fontanelle?;;id3D400;;During the illness that led to death, did the baby have a sunken fontanelle?;;id3D400 == 'yes';
+4260;unw_d1;Did the baby become unresponsive or unconscious soon after birth (within less than 24 hours)?;;id3D410;;Did the baby become unresponsive or unconscious soon after birth, within less than 24 hours?;;id3D410 == 'yes';
+4270;unw_d2;Did the baby become unresponsive or unconscious more than 1 day after birth?;;id3D420;;Did the baby become unresponsive or unconscious more than 24 hours after birth?;;id3D420 == 'yes';
+4280;cold;Did the baby become cold to the touch before it died?;;id3D430;;During the illness that led to death, did the baby become cold to touch?;;id3D430 == 'yes';
+4290;umbinf;Did the baby have redness or discharge from the umbilical cord stump?;;id3D440;;Did the baby have redness or discharge from the umbilical cord stump?;;id3D440 == 'yes';
+4300;b_yellow;Did the baby have yellow palms or soles?;;id3D450;;During the illness that led to death, did the baby have yellow skin, palms (hand) or soles (foot)?;;id3D450 == 'yes';
+4310;devel;Was the baby/the child not growing normally?;;id3D600;;Before the illness that led to death, was the baby/the child growing normally?;;id3D600 == 'yes';WHO ID changed
+4320;born_malf;Did the baby/the child have any malformation?;;id3D230;;Was any part of the baby physically abnormal at time of delivery? (for example: body part too large or too small, additional growth on body)?;;id3D230 == 'yes';
+4330;mlf_bk;Did the baby/the child have a swelling/defect on the back?;;id3D240;;Did the baby/ child have a swelling or defect on the back?;;id3D240 == 'yes';
+4340;mlf_lh;Did the baby/the child have a very large head?;;id3D241;;Did the baby/ child have a very large head?;;id3D241 == 'yes';WHO ID changed
+4350;mlf_sh;Did the baby/the child have a very small head?;;id3D242;;Did the baby/ child have a very small head?;;id3D242 == 'yes';WHO ID changed
+4360;mttv;Did the mother receive tetanus toxoid (TT) vaccine?;;id3D265;;Did the mother receive tetanus toxoid (TT) vaccine?;;id3D265 == 'yes';WHO ID changed
+4370;b_norm;Was baby born in a normal vaginal delivery?;;id3D258;;Was the delivery normal vaginal, without forceps or vacuum?;;id3D258 == 'yes';WHO ID changed
+4380;b_assist;Was baby born with forceps/vacuum?;;id3D259;;Was the delivery vaginal, with forceps or vacuum?;;id3D259 == 'yes';WHO ID changed
+4390;b_caes;Was baby delivered by Caesarean section?;;id3D260;;Was the delivery a Caesarean section?;;id3D260 == 'yes';WHO ID changed
+4400;b_first;Was this baby born from the mother's first pregnancy?;;id3D260;;;;1 == 2;Mapping unclear
 4410;b_more4;Did the baby's mother have four or more births, including stillbirths, before this pregnancy?;;id3D267;;How many births, including stillbirths, did the baby's mother have before this baby?;;id3D267 >= 4;Mapping unclear
-4440;b_mbpr;During pregnancy, did the baby's mother suffer from high blood pressure?;;id3D269;;During the last 3 months of pregnancy, labour or delivery, did the baby's mother suffer from high blood pressure?;;selected 'yes';Mapping unclear
-;;;;;;;;selected 'no';
-4450;b_msmds;Did the baby's mother have foul smelling vaginal discharge during pregnancy or after delivery?;;id3D271;;Did the baby's mother have foul smelling vaginal discharge during pregnancy or after delivery?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4460;b_mcon;During the last 3 months of pregnancy, did the baby's mother suffer from convulsions?;;id3D273;;During the last 3 months of pregnancy, labour or delivery, did the baby's mother suffer from convulsions?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4470;b_mbvi;During the last 3 months of pregnancy did the baby's mother suffer from blurred vision?;;id3D275;;During the last 3 months of pregnancy did the baby's mother suffer from blurred vision?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4480;b_mvbl;Did the baby's mother have vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3D276;;Did the baby's mother have vaginal bleeding during the last 3 months of pregnancy but before labour started?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-4490;b_bfac;Was the child born in a health facility?;;id3D155;;Where was the deceased born?;;selected 'hospital';WHO ID changed
-;;;;;;;;selected 'other_health_facility';
-4500;b_bhome;Was the child born at home?;;id3D155;;Where was the deceased born?;;selected 'home';
-4510;b_bway;Was the child born somewhere else, e.g. on the way to a facility?;;id3D155;;Where was the deceased born?;;selected 'on_route_to_hospital_or_facility';WHO ID changed
-;;;;;;;;selected 'other';
-4520;b_bprof;Did the mother receive professional assistance during the delivery?;;id3D165;;Did the mother receive professional assistance during the delivery?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-5000;injury;Did (s)he suffer from any injury or accident that led to her/his death?;;id3E100;;Did (s)he suffer from any injury or accident that led to her/his death?;;selected 'yes';
-;;;;;;;;selected 'no';
-5010;traffic;Was it a road traffic accident?;;id3E115;;Was it a road traffic accident?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-5020;o_trans;Was (s)he Injured in a non?road transport accident?;;;;;;;Mapping unclear
-5030;fall;Was (s)he Injured in a fall?;;id3E310;;Was (s)he injured in a fall?;;selected 'yes';
-;;;;;;;;selected 'no';
-5040;drown;Did (s)he die of drowning?;;id3E320;;Did (s)he die of drowning?;;selected 'yes';
-;;;;;;;;selected 'no';
-5050;fire;Did (s)he suffer from burns?;;id3E330;;Did (s)he suffer from accidental burns?;;selected 'yes';
-;;;;;;;;selected 'no';
-5060;assault;Was (s)he subject to violence/assault?;;id3E520;;Was (s)he subject to violence/assault?;;selected 'yes';
-;;;;;;;;selected 'no';
-5070;venom;Did (s)he suffer from any plant/animal/insect bite or sting that led to her/his death?;;id3E340;;Was (s)he accidentally injured by a plant/animal/insect that led to her/his death?;;selected 'yes';
-;;;;;;;;selected 'no';
-5080;force;Was (s)he injured by a force of nature;;id3E500;;Was (s)he injured by a force of nature?;;selected 'yes';
-;;;;;;;;selected 'no';
-5090;poison;Was there any poisoning?;;id3E510;;Was there any poisoning?;;selected 'yes';
-;;;;;;;;selected 'no';
-5100;inflict;Was the injury intentionally inflicted by someone else?;;id3E102;;Was the injury intentionally inflicted by someone else?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-5110;suicide;Do you think (s)he committed suicide?;;id3E113;;Do you think (s)he committed suicide?;;selected 'yes';WHO ID changed
-;;;;;;;;selected 'no';
-6000;alcohol;Did (s)he drink alcohol?;;id3F100;;Did (s)he drink alcohol?;;selected 'yes';
-;;;;;;;;selected 'no';
-6010;smoking;Did (s)he smoke tobacco (cigarette, cigar, pipe, etc.)?;;id3F110;;Did (s)he smoke tobacco (cigarette, cigar, pipe, etc.)?;;selected 'yes';
-;;;;;;;;selected 'no';
-6020;married;Was she married at the time of death?;;id1A600;;What was her/his marital status?;;selected 'married';
-6030;vaccin;Was ( s)he adequately vaccinated?;;id3D261;;Did you/the mother receive any vaccinations since reaching adulthood including during this pregnancy?;;;Mapping unclear
-;;;OR;id3H120;;Can I see the vaccination card (note the vaccines the child received)?;;;
-6040;treat;Did (s)he receive any treatment for the illness that led to death?;;id3G110;;Did (s)he receive any treatment for the illness that led to death?;;selected 'yes';
-;;;;;;;;selected 'no';
-6050;t_ort;Did (s)he receive oral rehydration salts?;;id3G120;;Did (s)he receive oral rehydration salts?;;selected 'yes';
-;;;;;;;;selected 'no';
-6060;t_iv;Did (s)he receive (or need) intravenous fluids (drip) treatment?;;id3G130;;Did (s)he receive (or need) intravenous fluids (drip) treatment?;;selected 'yes';
-;;;;;;;;selected 'no';
-6070;blood_tr;Did (s)he receive (or need) a blood transfusion?;;id3G140;;Did (s)he receive (or need) a blood transfusion?;;selected 'yes';
-;;;;;;;;selected 'no';
-6080;t_ngt;Did (s)he receive (or need) treatment/food through a tube passed through the nose?;;id3G150;;Did (s)he receive (or need) treatment/food through a tube passed through the nose?;;selected 'yes';
-;;;;;;;;selected 'no';
-6090;antib_i;Did (s)he receive (or need) injectable antibiotics?;;id3G160;;Did (s)he receive (or need) injectable antibiotics?;;selected 'yes';
-;;;;;;;;selected 'no';
-6100;surgery;Did (s)he have (or need) an operation for the illness?;;id3G170;;Did (s)he have (or need) an operation for the illness?;;selected 'yes';
-;;;;;;;;selected 'no';
-6110;sur_1m;Did (s)he have the operation within 1 month before death?;;id3G180;;Did (s)he have the operation within 1 month before death?;;selected 'yes';
-;;;;;;;;selected 'no';
-6120;disch;Was (s)he discharged from hospital very ill?;;id3G190;;Was (s)he discharged from hospital very ill?;;selected 'yes';
-;;;;;;;;selected 'no';
-7000;shospf;In the final days before death, did (s)he travel to a hospital or health facility?;;id4A100;;In the final days before death, did s/he travel to a hospital or health facility?;;selected 'yes';
-;;;;;;;;selected 'no';
-7010;strans;Did (s)he use motorised transport to get to the hospital or health facility?;;id4A110;;Did (s)he use motorised transport to get to the hospital or health facility?;;selected 'yes';
-;;;;;;;;selected 'no';
-7020;sadmit;Were there any problems during admission to the hospital or health facility?;;id4A120;;Were there any problems during admission to the hospital or health facility?;;selected 'yes';
-;;;;;;;;selected 'no';
-7030;streat;Were there any problems with the way (s)he was treated (medical treatment, procedures, inter?personal attitudes, respect, dignity) in the hospital or health facility?;;id4A130;;Were there any problems with the way (s)he was treated (medical treatment, procedures, interpersonal attitudes, respect, dignity) in the hospital or health facility?;;selected 'yes';
-;;;;;;;;selected 'no';
-7040;smedic;Were there any problems getting medications, or diagnostic tests in the hospital or health facility?;;id4A140;;Were there any problems getting medications, or diagnostic tests in the hospital or health facility?;;selected 'yes';
-;;;;;;;;selected 'no';
-7050;smore2;Does it take more than 2 hours to get to the nearest hospital or health facility from the deceased's household?;;id4A150;;Does it take more than 2 hours to get to the nearest hospital or health facility from the deceased's household?;;selected 'yes';
-;;;;;;;;selected 'no';
-7060;sdoubt;In the final days before death, were there any doubts about whether medical care was needed?;;id4A160;;In the final days before death, were there any doubts about whether medical care was needed?;;selected 'yes';
-;;;;;;;;selected 'no';
-7070;stradm;In the final days before death, was traditional medicine used?;;id4A170;;In the final days before death, was traditional medicine used?;;selected 'yes';
-;;;;;;;;selected 'no';
-7080;smobph;In the final days before death, did anyone use a telephone or cell phone to call for help?;;id4A180;;In the final days before death, did anyone use a telephone or cell phone to call for help?;;selected 'yes';
-;;;;;;;;selected 'no';
-7090;scosts;Over the course of illness, did the total costs of care and treatment prohibit other household payments?;;id4A190;;Over the course of illness, did the total costs of care and treatment prohibit other household payments?;;selected 'yes';
-;;;;;;;;selected 'no';
+4440;b_mbpr;During pregnancy, did the baby's mother suffer from high blood pressure?;;id3D269;;During the last 3 months of pregnancy, labour or delivery, did the baby's mother suffer from high blood pressure?;;id3D269 == 'yes';Mapping unclear
+4450;b_msmds;Did the baby's mother have foul smelling vaginal discharge during pregnancy or after delivery?;;id3D271;;Did the baby's mother have foul smelling vaginal discharge during pregnancy or after delivery?;;id3D271 == 'yes';WHO ID changed
+4460;b_mcon;During the last 3 months of pregnancy, did the baby's mother suffer from convulsions?;;id3D273;;During the last 3 months of pregnancy, labour or delivery, did the baby's mother suffer from convulsions?;;id3D273 == 'yes';WHO ID changed
+4470;b_mbvi;During the last 3 months of pregnancy did the baby's mother suffer from blurred vision?;;id3D275;;During the last 3 months of pregnancy did the baby's mother suffer from blurred vision?;;id3D275 == 'yes';WHO ID changed
+4480;b_mvbl;Did the baby's mother have vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3D276;;Did the baby's mother have vaginal bleeding during the last 3 months of pregnancy but before labour started?;;id3D276 == 'yes';WHO ID changed
+4490;b_bfac;Was the child born in a health facility?;;id3D155;;Where was the deceased born?;;id3D155 == 'hospital' || id3D155 == 'other_health_facility';WHO ID changed
+4500;b_bhome;Was the child born at home?;;id3D155;;Where was the deceased born?;;id3D155 == 'home';
+4510;b_bway;Was the child born somewhere else, e.g. on the way to a facility?;;id3D155;;Where was the deceased born?;;id3D155 == 'on_route_to_hospital_or_facility' || id3D155 ==  'other';WHO ID changed
+4520;b_bprof;Did the mother receive professional assistance during the delivery?;;id3D165;;Did the mother receive professional assistance during the delivery?;;id3D165 == 'yes';WHO ID changed
+5000;injury;Did (s)he suffer from any injury or accident that led to her/his death?;;id3E100;;Did (s)he suffer from any injury or accident that led to her/his death?;;id3E100 == 'yes';
+5010;traffic;Was it a road traffic accident?;;id3E115;;Was it a road traffic accident?;;id3E115 == 'yes';WHO ID changed
+5020;o_trans;Was (s)he Injured in a non?road transport accident?;;id3E115;;;;1 == 2;Mapping unclear
+5030;fall;Was (s)he Injured in a fall?;;id3E310;;Was (s)he injured in a fall?;;id3E100 == 'yes' && id3E310 == 'yes';
+5040;drown;Did (s)he die of drowning?;;id3E320;;Did (s)he die of drowning?;;id3E100 == 'yes' && id3E320 == 'yes';
+5050;fire;Did (s)he suffer from burns?;;id3E330;;Did (s)he suffer from accidental burns?;;id3E100 == 'yes' && id3E330 == 'yes';
+5060;assault;Was (s)he subject to violence/assault?;;id3E520;;Was (s)he subject to violence/assault?;;id3E100 == 'yes' && id3E520 == 'yes';
+5070;venom;Did (s)he suffer from any plant/animal/insect bite or sting that led to her/his death?;;id3E340;;Was (s)he accidentally injured by a plant/animal/insect that led to her/his death?;;id3E100 == 'yes' && id3E340 == 'yes';
+5080;force;Was (s)he injured by a force of nature;;id3E500;;Was (s)he injured by a force of nature?;;id3E100 == 'yes' && id3E500 == 'yes';
+5090;poison;Was there any poisoning?;;id3E510;;Was there any poisoning?;;id3E100 == 'yes' && id3E510 == 'yes';
+5100;inflict;Was the injury intentionally inflicted by someone else?;;id3E102;;Was the injury intentionally inflicted by someone else?;;id3E102 == 'yes';WHO ID changed
+5110;suicide;Do you think (s)he committed suicide?;;id3E113;;Do you think (s)he committed suicide?;;id3E100 == 'yes' && id3E113 == 'yes';WHO ID changed
+6000;alcohol;Did (s)he drink alcohol?;;id3F100;;Did (s)he drink alcohol?;;id3F100 == 'yes';
+6010;smoking;Did (s)he smoke tobacco (cigarette, cigar, pipe, etc.)?;;id3F110;;Did (s)he smoke tobacco (cigarette, cigar, pipe, etc.)?;;id3F110 == 'yes';
+6020;married;Was she married at the time of death?;;id1A600;;What was her/his marital status?;;id1A600 == 'married';
+6030;vaccin;Was (s)he adequately vaccinated?;;id3D261;;Did you/the mother receive any vaccinations since reaching adulthood including during this pregnancy?||  id3H120: Can I see the vaccination card (note the vaccines the child received)?;;1 == 2;Mapping unclear
+6040;treat;Did (s)he receive any treatment for the illness that led to death?;;id3G110;;Did (s)he receive any treatment for the illness that led to death?;;id3G110 == 'yes';
+6050;t_ort;Did (s)he receive oral rehydration salts?;;id3G120;;Did (s)he receive oral rehydration salts?;;id3G110 == 'yes' && id3G120 == 'yes';
+6060;t_iv;Did (s)he receive (or need) intravenous fluids (drip) treatment?;;id3G130;;Did (s)he receive (or need) intravenous fluids (drip) treatment?;;id3G110 == 'yes' && id3G130 == 'yes';
+6070;blood_tr;Did (s)he receive (or need) a blood transfusion?;;id3G140;;Did (s)he receive (or need) a blood transfusion?;;id3G140 == 'yes';
+6080;t_ngt;Did (s)he receive (or need) treatment/food through a tube passed through the nose?;;id3G150;;Did (s)he receive (or need) treatment/food through a tube passed through the nose?;;id3G110 == 'yes' && id3G150 == 'yes';
+6090;antib_i;Did (s)he receive (or need) injectable antibiotics?;;id3G160;;Did (s)he receive (or need) injectable antibiotics?;;id3G160 == 'yes';
+6100;surgery;Did (s)he have (or need) an operation for the illness?;;id3G170;;Did (s)he have (or need) an operation for the illness?;;id3G110 == 'yes' && id3G170 == 'yes';
+6110;sur_1m;Did (s)he have the operation within 1 month before death?;;id3G180;;Did (s)he have the operation within 1 month before death?;;id3G180 == 'yes';
+6120;disch;Was (s)he discharged from hospital very ill?;;id3G190;;Was (s)he discharged from hospital very ill?;;id3G190 == 'yes';
+7000;shospf;In the final days before death, did (s)he travel to a hospital or health facility?;;id4A100;;In the final days before death, did s/he travel to a hospital or health facility?;;id4A100 == 'yes';
+7010;strans;Did (s)he use motorised transport to get to the hospital or health facility?;;id4A110;;Did (s)he use motorised transport to get to the hospital or health facility?;;id4A110 == 'yes';
+7020;sadmit;Were there any problems during admission to the hospital or health facility?;;id4A120;;Were there any problems during admission to the hospital or health facility?;;id4A120 == 'yes';
+7030;streat;Were there any problems with the way (s)he was treated (medical treatment, procedures, inter?personal attitudes, respect, dignity) in the hospital or health facility?;;id4A130;;Were there any problems with the way (s)he was treated (medical treatment, procedures, interpersonal attitudes, respect, dignity) in the hospital or health facility?;;id4A130 == 'yes';
+7040;smedic;Were there any problems getting medications, or diagnostic tests in the hospital or health facility?;;id4A140;;Were there any problems getting medications, or diagnostic tests in the hospital or health facility?;;id4A140 == 'yes';
+7050;smore2;Does it take more than 2 hours to get to the nearest hospital or health facility from the deceased's household?;;id4A150;;Does it take more than 2 hours to get to the nearest hospital or health facility from the deceased's household?;;id4A150 == 'yes';
+7060;sdoubt;In the final days before death, were there any doubts about whether medical care was needed?;;id4A160;;In the final days before death, were there any doubts about whether medical care was needed?;;id4A160 == 'yes';
+7070;stradm;In the final days before death, was traditional medicine used?;;id4A170;;In the final days before death, was traditional medicine used?;;id4A170 == 'yes';
+7080;smobph;In the final days before death, did anyone use a telephone or cell phone to call for help?;;id4A180;;In the final days before death, did anyone use a telephone or cell phone to call for help?;;id4A180 == 'yes';
+7090;scosts;Over the course of illness, did the total costs of care and treatment prohibit other household payments?;;id4A190;;Over the course of illness, did the total costs of care and treatment prohibit other household payments?;;id4A190 == 'yes';

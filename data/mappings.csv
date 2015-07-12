@@ -1,6 +1,4 @@
 InterVA4;InterVA variable;Question;;WHOVA2014;;Question;;Threshold;Note
-1080;male;Was the deceased male?;;id1A110;;What was the sex of the deceased?;;id1A110 == 'male';
-1090;female;Was the deceased female?;;id1A110;;What was the sex of the deceased?;;id1A110 == 'female';
 1010;elder;Was (s)he aged 65 years or over at death?;if;ageInYears;!= NaN;;;ageInYears > 65 || age_adult > 65;
 1020;midage;Was (s)he aged 50 to 64 years at death?;if;ageInYears;!= NaN;;;(ageInYears >=50 && ageInYears <= 64) || (age_group ==  'adult' && age_adult >= 50 && age_adult <= 64);
 1030;adult;Was (s)he aged 15-49 years at death?;if;ageInYears;!= NaN;;;(ageInYears >=15 && ageInYears <= 49) || (age_group ==  'adult' && age_adult >= 15 && age_adult <= 49);
@@ -8,6 +6,8 @@ InterVA4;InterVA variable;Question;;WHOVA2014;;Question;;Threshold;Note
 1050;under5;Was (s)he aged 1 to 4 years at death?;if;ageInYears;!= NaN;;;(ageInYears >= 1 && ageInYears <=4) || (age_group ==  'child' && age_child_unit == 'days' && age_child_days >= 1*365.25 && age_child_days <= 4*365.25) || (age_group ==  'child' && age_child_unit == 'months' && age_child_months >= 1*12 && age_child_months <= 4*12) || (age_group ==  'child' && age_child_unit == 'years' && age_child_years >= 1 && age_child_years <= 4);
 1060;infant;Was (s)he aged 1 to 11 months at death?;if;ageInDays;!= NaN;;;(ageInDays >= 30.4 && ageInDays <= 12*30.4) || (age_group ==  'child' && age_child_unit == 'days' && age_child_days >= 30.4 && age_child_days <= 12*30.4) || (age_group ==  'child' && age_child_unit == 'months' && age_child_months >= 1 && age_child_months <= 12) || (age_group ==  'child' && age_child_unit == 'years' && age_child_years == 1);
 1070;neonate;Was (s)he aged 28 days or less at death?;if;ageInDays;!= NaN;;;((ageInDays >= 0 && ageInDays <= 28)) || (age_group ==  'neonate' && age_neonate_days <= 28);
+1080;male;Was the deceased male?;;id1A110;;What was the sex of the deceased?;;id1A110 == 'male';
+1090;female;Was the deceased female?;;id1A110;;What was the sex of the deceased?;;id1A110 == 'female';
 1100;magegp1;Was this a woman aged 12 to 19 years at death?;if;id1A110; == 'female';What was the sex of the deceased?;;id1A110 == 'female' && ((ageInYears >=12 && ageInYears <= 19) || (age_group ==  'adult' && age_adult >= 12 && age_adult <= 19));
 1110;magegp2;Was this a woman aged 20-34 years at death?;if;id1A110; == 'female';What was the sex of the deceased?;;id1A110 == 'female' && ((ageInYears >=20 && ageInYears <= 34) || (age_group ==  'adult' && age_adult >= 20 && age_adult <= 34));
 1120;magegp3;Was this a woman aged 35-49 years at death?;if;id1A110; == 'female';What was the sex of the deceased?;;id1A110 == 'female' && ((ageInYears >=35 && ageInYears <= 49) || (age_group ==  'adult' && age_adult >= 35 && age_adult <= 49));

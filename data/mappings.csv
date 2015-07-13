@@ -83,7 +83,7 @@ InterVA4;InterVA variable;Question;;WHOVA2014;;Question;;Threshold;Note
 2400;headache;Did (s)he have a severe headache?;;id3B400;;Did (s)he have a severe headache?;;id3B400 == 'yes';
 2410;skin;Did (s)he have any skin problems?;;id3B530;;Did (s)he have any skin problems?;;id3B530 == 'yes';
 2420;skin_les;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;id3B540;;Did (s)he have any ulcers, abscess or sores anywhere except on the feet?;;id3B530 == 'yes' && id3B540 == 'yes';
-2430;sk feet;Did (s)he have any , ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B550;;Did (s)he have any ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B530 == 'yes' && id3B550 == 'yes';
+2430;sk_feet;Did (s)he have any , ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B550;;Did (s)he have any ulcers, abscess or sores on the feet that were not also on other parts of the body?;;id3B530 == 'yes' && id3B550 == 'yes';
 2440;rash;During the illness that led to death, did (s)he have any skin rash?;;id3B560;;During the illness that led to death, did (s)he have any skin rash?;;id3B530 == 'yes' && id3B560 == 'yes';
 2450;ac_rash;Did (s)he have the skin rash for less than 1 week?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B560 == 'yes' && id3B570 >= 0 && id3B570 < 7;
 2460;ch_rash;Did (s)he have the skin rash for 1 week or more?;;id3B570;;For how many days did (s)he have the skin rash?;;id3B560 == 'yes' && id3B570 >= 7;

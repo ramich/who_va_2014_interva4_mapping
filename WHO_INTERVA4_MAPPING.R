@@ -16,6 +16,9 @@ setwd("C:/dev/workspace_R/who_va_2014_interva4_mapping/data")
 
 # load the necessary libraries:
 
+#load InterVA4 package
+library(InterVA4)
+
 #load foreach package
 library(foreach)
 
@@ -112,7 +115,7 @@ if(1==2){
 				print(paste(who_var,":", get(who_var)))
 				print(paste("InterVA4:", interva))
 				##Evaluate expression and set InterVA4 variable accordingly
-				outputData[i] = 'y'
+				outputData[i+1] = 'y'
 			}
 			
 		}else{
@@ -124,17 +127,34 @@ if(1==2){
 	counter = counter + 1
 }
 
-print(outputData)
+colnames(outputData) <- toupper(colnames(outputData)) #Change colnames to all uppercase
 
-#Write output to file
-write.csv2(outputData,file="C:/dev/workspace_R/who_va_2014_interva4_mapping/data/outputData.csv")
+print(outputData) #output InterVA4 data input structure
 
+#Write output to file (comma separated for interva4 input, no quotation marks)
+write.csv(outputData,file="C:/dev/workspace_R/who_va_2014_interva4_mapping/data/outputData.csv", quote = FALSE, na="", row.names=FALSE)
+
+#InterVA4 analysis
+## to get causes of death with group code for further usage
+va <- InterVA(outputData, HIV = "l", Malaria = "l", directory = "VA test", 
+filename = "VA_result_wt_code", output = "extended", append = FALSE,
+replicate = TRUE, groupcode = TRUE, write = TRUE)
+
+str(va) # Output InterVA4 object structure
+
+cat("\nInterVA4 Result:\n\n")
+print(paste("Most likely WHO 2012 VA cause category:", va$VA[[1]]$CAUSE1))
+print(paste("Likelihood:", va$VA[[1]]$LIK1, "%"))
+
+cat("\n\n\n")
 etm<-proc.time() - ptm # End time
 print(paste("Total run time:", etm[3], "s")) #print elapsed time
 
 # load the dataset
 # unload the libraries
+detach("package:InterVA4")
 detach("package:foreach")
+
 # change back to the original directory
 setwd(initial.dir)
 

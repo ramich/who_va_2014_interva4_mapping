@@ -146,6 +146,14 @@ cat("\nInterVA4 Result:\n\n")
 print(paste("Most likely WHO 2012 VA cause category:", va$VA[[1]]$CAUSE1))
 print(paste("Likelihood:", va$VA[[1]]$LIK1, "%"))
 
+InterVA.plot(va$VA[[1]], type = "pie", min.prob = 0.01,
+main = "1st sample VA analysis using pie chart", clockwise = FALSE,
+radius = 0.6, cex = 0.6, cex.main = 0.8)
+
+## Save plot as image
+#dev.copy(jpeg,filename="plot.jpg");
+#dev.off ();
+
 cat("\n\n\n")
 etm<-proc.time() - ptm # End time
 print(paste("Total run time:", etm[3], "s")) #print elapsed time

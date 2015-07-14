@@ -1,18 +1,45 @@
-## WHO VA 2014 <-> InterVA4 mapping
+########### WHO VA 2014 <-> InterVA4 file format mapping ################
+## ----------------------------------------------------------------------
+##
+## @description: 	Converts WHO VA 2014 submission to InterVA4 file format 
+##			ready to be coded in InterVA4.
+## @input:		mapping file who 2014 -> interva4 variables, and
+##			who 2014 submission csv (exported from odk aggregate)
+## @output:		csv for usage in InterVA4
+## @author: 	RMI
+## @date: 		07.2015
+##
+## ----------------------------------------------------------------------
 
-cat("\nWHO VA Instrument 2014 -> InterVA4 Mapping\n\n")
+cat("\nWHO VA Instrument 2014 -> InterVA4 Conversion\n\n")
 
 #Clear variables
-rm(list=ls(all=TRUE)) 
+rm(list=ls(all=TRUE))
 
 #Start time
 ptm <- proc.time()
+
+## Deine your file path variables here
+######################################################################
+######################################################################
+
+workingDir = "C:/dev/workspace_R/who_va_2014_interva4_mapping/data";
+mappingFileName = "mappings.csv"
+submissionFileName = "who.csv"
+outputFileName = "outputData.csv"
+
+#Check if directory and files exist
+if(!dir.exists(workingDir) || !file.exists(mappingFileName) || !file.exists(submissionFileName)){
+	stop("Directory or file not found.")
+}
 
 # store the current directory
 initial.dir<-getwd()
 print(paste("initial Working directory:" , initial.dir))
 # change to the new directory
-setwd("C:/dev/workspace_R/who_va_2014_interva4_mapping/data")
+print(paste("Set to working directory:" , workingDir))
+setwd(workingDir)
+print(paste("Set to working directory to:" , getwd()))
 
 # load the necessary libraries:
 
@@ -23,7 +50,7 @@ library(InterVA4)
 library(foreach)
 
 #load who submission file:
-who = read.csv("C:/dev/workspace_R/who_va_2014_interva4_mapping/data/who.csv")
+who = read.csv(submissionFileName)
 
 #store column names
 v <- colnames(who)
@@ -55,7 +82,7 @@ loadAndSetAllVariablesFromWHOInstrument<-function(){
 }
 
 #Load mapping csv file:
-mapping = read.csv2("C:/dev/workspace_R/who_va_2014_interva4_mapping/data/mappings.csv")
+mapping = read.csv2(mappingFileName)
 
 loadAndSetAllVariablesFromWHOInstrument()
 
@@ -132,7 +159,7 @@ colnames(outputData) <- toupper(colnames(outputData)) #Change colnames to all up
 print(outputData) #output InterVA4 data input structure
 
 #Write output to file (comma separated for interva4 input, no quotation marks)
-write.csv(outputData,file="C:/dev/workspace_R/who_va_2014_interva4_mapping/data/outputData.csv", quote = FALSE, na="", row.names=FALSE)
+write.csv(outputData,file=outputFileName, quote = FALSE, na="", row.names=FALSE)
 
 #InterVA4 analysis
 ## to get causes of death with group code for further usage

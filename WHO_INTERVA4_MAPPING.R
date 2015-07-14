@@ -1,4 +1,4 @@
-########### WHO VA 2014 <-> InterVA4 file format mapping ################
+########### WHO VA 2014 -> InterVA4 file format mapping ################
 ## ----------------------------------------------------------------------
 ##
 ## @description: 	Converts WHO VA 2014 submission to InterVA4 file format 

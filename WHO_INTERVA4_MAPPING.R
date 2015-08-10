@@ -32,7 +32,7 @@ ptm <- proc.time()
 ######################################################################
 workingDir = "C:/dev/workspace_R/who_va_2014_interva4_mapping/data";
 mappingFileName = "mappings.csv"
-submissionFileName = "who2.csv"
+submissionFileName = "who_multiple_entries.csv"
 outputFileName = "outputData.csv"
 ######################################################################
 

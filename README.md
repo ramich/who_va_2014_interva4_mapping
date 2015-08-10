@@ -13,7 +13,7 @@ Converts WHO VA 2014 submission to InterVA4 file format ready to be coded in Int
 A CSV file for direct usage in InterVA4
 
 **Files**		
-In the data folder there is the current 2014 WHO VA Tool to InterVA4 variables mapping file and a sample submission.
+In the /data folder there is the current 2014 WHO VA Tool to InterVA4 variables mapping file and 2 test data files with submissions (who.csv with one submission and who_multiple_entries.csv with multiple submissions) to test.
 
 **Dependencies**		
 Packages:

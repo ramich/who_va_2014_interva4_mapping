@@ -32,9 +32,8 @@ ptm <- proc.time()
 ######################################################################
 workingDir = "C:/dev/workspace_R/who_va_2014_interva4_mapping/data";
 mappingFileName = "mappings.csv"
-submissionFileName = "who.csv"
+submissionFileName = "who2.csv"
 outputFileName = "outputData.csv"
-
 ######################################################################
 
 # store the current directory
@@ -51,6 +50,7 @@ who = read.csv(submissionFileName)
 #store column names
 v <- colnames(who)
 n = ncol(who);
+entries = nrow(who);
 
 getValueInSubmissionForWHOId<-function(id){
 	#print(paste("Get object with id:", id))
@@ -58,107 +58,116 @@ getValueInSubmissionForWHOId<-function(id){
 	return(value)
 }
 
-loadAndSetAllVariablesFromWHOInstrument<-function(){
+loadAndSetAllVariablesFromWHOInstrument<-function(entryLevel){
+	entry = who[entryLevel,] #Get current entry
 	x <- foreach(j=1:n) %do% {
-		entry = who[j] #Get current entry
 		header = names(who)[j]
-		value = entry[1,1]
+		value =  as.character(entry[1,j])
 		header_cleaned = regmatches(header, regexpr("[^\\.]*$", header))
 
-	#Set value to 0 if NA to prevent NA when evaluating expression
-	#Check how to replace this, since this introduces some errors (e.g. value < 10)
+		#Set value to 0 if NA to prevent NA when evaluating expression
+		#Check how to replace this, since this introduces some errors (e.g. value < 10)
 		if(is.na(value)){
 			value = -1;
 		}
 
 		assign(header_cleaned, value, envir = .GlobalEnv) # put variables in global environment
-		#print(get(header_cleaned))
 		#print(paste(header_cleaned,":", value))
 	}
 }
 
+
 #Load mapping csv file:
 mapping = read.csv2(mappingFileName)
 
-loadAndSetAllVariablesFromWHOInstrument()
-
 #print(ls(all.names = TRUE)) #print all variables
-
-#Prepare output
-outputData <- data.frame(matrix(ncol=246))
 
 #Run through mappings file and fill in value for every InterVA4 variable
 who_n = nrow(mapping)
 #who_n = 1 # Limit to first x entries for testing purposes
 counter = 1
 
-x <- foreach(i=1:who_n) %do%{	
+outputData <- data.frame(matrix(ncol=246)) #Initialize output dataframe
 
-	##Assign who variable
-	#who_var = as.character(mapping[i,4]) # Convert to class character from factors
-	expression = as.character(mapping[i,5])
-	interva = as.character(mapping[i, 2])
-	id = mapping[i, 1]
-	question = mapping[i,3]
-	
-	#Set Column names and also ID
-	if(i == 1){
-		colnames(outputData)[1] <- "ID"
-		outputData[1] = i
-	}
-	colnames(outputData)[i+1] <- interva
+rows <- foreach(entryCount=1:entries ) %do%{	
+	loadAndSetAllVariablesFromWHOInstrument(entryCount)
 
-	if(class(interva) == "character" && nchar(interva) > 0){
-		#value = getValueInSubmissionForWHOId(who_var)
+	#Prepare output
+	currentData <- data.frame(matrix(ncol=246))
 
-		##Evaluate expression and set InterVA4 variable accordingly
-		retVal = eval(parse(text=expression))
-		if(retVal == TRUE){
-			printTrueOutput = FALSE
-			if(printTrueOutput){
-				print(counter)
-				print(paste("Id:",id))
-				print(paste("Question:",question))
-				#print(paste("Got back value:", value))
-				print(paste("Expression:", expression), max.levels=0)
-				#print(paste(who_var,":", get(who_var)))
-				print(paste("InterVA4:", interva))
-			}
-			##Evaluate expression and set InterVA4 variable accordingly
-			outputData[i+1] = 'y'
+	x <- foreach(i=1:who_n) %do%{	
+
+		##Assign who variable
+		#who_var = as.character(mapping[i,4]) # Convert to class character from factors
+		expression = as.character(mapping[i,5])
+		interva = as.character(mapping[i, 2])
+		id = mapping[i, 1]
+		question = mapping[i,3]
+		
+		#Set Column names and also ID
+		if(i == 1){
+			colnames(currentData)[1] <- "ID"
+			currentData[1] = i
 		}
-	}else{
-		print("Empty")
+		colnames(currentData)[i+1] <- interva
+
+		if(class(interva) == "character" && nchar(interva) > 0){
+			#value = getValueInSubmissionForWHOId(who_var)
+
+			##Evaluate expression and set InterVA4 variable accordingly
+			retVal = eval(parse(text=expression))
+			if(retVal == TRUE){
+				printTrueOutput = FALSE
+				if(printTrueOutput){
+					print(counter)
+					print(paste("Id:",id))
+					print(paste("Question:",question))
+					#print(paste("Got back value:", value))
+					print(paste("Expression:", expression), max.levels=0)
+					#print(paste(who_var,":", get(who_var)))
+					print(paste("InterVA4:", interva))
+				}
+				##Evaluate expression and set InterVA4 variable accordingly
+				currentData[i+1] = 'y'
+			}
+		}else{
+			print("Empty")
+		}
+		counter = counter + 1
 	}
-	counter = counter + 1
+
+	colnames(currentData) <- toupper(colnames(currentData)) #Change colnames to all uppercase
+
+	colnames(outputData) <- toupper(colnames(currentData)) #Set column names for output
+
+	#print(currentData) #output InterVA4 data input structure
+
+	outputData[entryCount,] <- currentData
 }
 
-colnames(outputData) <- toupper(colnames(outputData)) #Change colnames to all uppercase
+print(outputData) #print interva input
 
-#print(outputData) #output InterVA4 data input structure
-
-#Write output to file (comma separated for interva4 input, no quotation marks)
-write.csv(outputData,file=outputFileName, quote = FALSE, na="", row.names=FALSE)
-
-#InterVA4 analysis
+############################################################################
+#########InterVA4 analysis #################################################
+############################################################################
 ## to get causes of death with group code for further usage
 va <- InterVA(outputData, HIV = "l", Malaria = "l", directory = "VA test", 
-filename = "VA_result_wt_code", output = "extended", append = FALSE,
-replicate = TRUE, groupcode = TRUE, write = TRUE)
+filename = "VA_result_2_wt_code", output = "extended", append = FALSE,
+replicate = TRUE, groupcode = TRUE, write = FALSE) # SET write to TRUE for CSV file
 
-#str(va) # Output InterVA4 object structure
+#Write most probable COD for each individual entry
+va_entries = length(va$ID)
+va_loop <- foreach(i=1:va_entries) %do%{	
+	print(paste("Most likely CoD:", va$VA[[i]]$CAUSE1, "| Likelihood:", va$VA[[i]]$LIK1, "%"))
+}
 
-cat("\nInterVA4 Result:\n\n")
-print(paste("Most likely WHO 2012 VA cause category:", va$VA[[1]]$CAUSE1))
-print(paste("Likelihood:", va$VA[[1]]$LIK1, "%"))
+population.summary <- Population.summary(va$VA, type = "pie",
+min.prob = 0.01, main = "population COD distribution using pie chart",
+clockwise = FALSE, radius = 0.7, cex = 0.7, cex.main = 0.8)
 
-InterVA.plot(va$VA[[1]], type = "pie", min.prob = 0.01,
-main = "1st sample VA analysis using pie chart", clockwise = FALSE,
-radius = 0.6, cex = 0.6, cex.main = 0.8)
-
-## Save plot as image
-#dev.copy(jpeg,filename="plot.jpg");
-#dev.off ();
+############################################################################
+#########END of InterVA4 analysis ##########################################
+############################################################################
 
 cat("\n\n\n")
 etm<-proc.time() - ptm # End time

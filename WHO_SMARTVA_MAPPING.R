@@ -140,7 +140,7 @@ rows <- foreach(entryCount=1:entries ) %do%{
 		##Assign who variable
 		who_var = as.character(mapping[i,5]) # Convert to class character from factors
 		expression = as.character(mapping[i,6])
-		interva = as.character(mapping[i, 2])
+		destination_var = as.character(mapping[i, 2])
 		id = mapping[i, 1]
 		question = mapping[i,3]
 		fix_value = as.character(mapping[i,7])
@@ -148,49 +148,40 @@ rows <- foreach(entryCount=1:entries ) %do%{
 		mapping_from = as.character(mapping[i,9])
 		mapping_to = as.character(mapping[i,10])
 		
-		colnames(currentData)[i] <- interva
+		colnames(currentData)[i] <- destination_var
 
-
-if(who_var == "id3B110"){
-	print(paste("------------------------->id3B110",who_var))
-	print(paste("------------------------->",getValueInSubmissionForWHOId(who_var)))
-}
-#if(getValueInSubmissionForWHOId(who_var) == -1){
-#	print(paste("Value for", who_var, "is -1. abort"))
-#}
-
-		if(!is.na(fix_value) && nchar(fix_value) > 0 && is.na(expression)){
+		if(!is.na(fix_value) && nchar(fix_value) > 0 && nchar(expression) == 0){
 			print(paste(i,"CONTAINS fixed ENTRY", fix_value))
 			currentData[i] = fix_value
 		}
-		else if(!is.na(dynamic_value) && nchar(dynamic_value) > 0 && is.na(expression)){
+		else if(!is.na(dynamic_value) && nchar(dynamic_value) > 0 && nchar(expression) == 0){
 			print(paste(i,"CONTAINS Dynamic ENTRY", dynamic_value))
 			dynamic_value_parsed = eval(parse(text=dynamic_value))
-			print(paste(i,"CONTAINS DYNAMIC VALUE::", dynamic_value_parsed))
-			currentData[i] = dynamic_value_parsed
+			if(dynamic_value_parsed != -1){
+				#print(paste(i,"CONTAINS DYNAMIC VALUE::", dynamic_value_parsed))
+				currentData[i] = dynamic_value_parsed
+			}
+			else{
+				currentData[i] = 0
+			}
 		}
-		else if(nchar(mapping_from) > 0 && nchar(mapping_to) > 0){
+		else if(nchar(who_var) > 0 && nchar(mapping_from) > 0 && nchar(mapping_to) > 0 && nchar(expression) == 0){
 			print(paste(i, "Mapping",mapping_from,"to",mapping_to))
 			#print(paste(class(mapping_from), class(mapping_to)))
-			print(paste("Value:", get(who_var),"(" ,who_var, ")"))
+			#print(paste("Value:", get(who_var),"(" ,who_var, ")"))
 
 			if(get(who_var) != -1){
 				mapped_value = mapValues(mapping_from, mapping_to, get(who_var))
 			
-				if(mapped_value != -1){
-					print(paste("Value", get(who_var), "mapped to", mapped_value))
-					currentData[i] = mapped_value
-				}
-				else{
-					currentData[i] = ""
-				}
+				#print(paste("Value", get(who_var), "mapped to", mapped_value))
+				currentData[i] = mapped_value
 			}
 			else{
-				currentData[i] = ""
+				currentData[i] = 9
 			}
 		}
-		else if(!is.na(expression) && nchar(expression) > 0){
-			print(paste("Expression:", expression))
+		else if(!is.na(expression) && nchar(expression) > 0 && nchar(mapping_from) == 0){
+			#print(paste("Expression:", expression))
 			evalBool = eval(parse(text=expression))
 			if(evalBool == TRUE){
 				print("Expression fullfilled!")
@@ -200,12 +191,28 @@ if(who_var == "id3B110"){
 				}
 				else if(!is.na(dynamic_value) && nchar(dynamic_value) > 0){
 					#print(paste(i,"CONTAINS Dynamic ENTRY", dynamic_value))
-					print(paste(i,"CONTAINS DYNAMIC ENTRY:", eval(parse(text=dynamic_value))))
-					currentData[i] = eval(parse(text=dynamic_value))
+					dynamic_value_parsed = eval(parse(text=dynamic_value));
+					print(paste(i,"CONTAINS DYNAMIC ENTRY:", dynamic_value_parsed))
+					currentData[i] = dynamic_value_parsed
 				}
+			}
+			else{
+				print(paste(i,"evaluated to FALSE"))
+			}
+		}
+		else if(!is.na(expression) && nchar(expression) > 0 && nchar(who_var) > 0 && nchar(mapping_from) > 0 && nchar(mapping_to) > 0){
+			evalBool = eval(parse(text=expression))
+			if(evalBool == TRUE){
+				mapped_value = mapValues(mapping_from, mapping_to, get(who_var))
+				print(paste(i, "Value::", get(who_var), "mapped to", mapped_value))
+				currentData[i] = mapped_value
+			}
+			else{
+				print(paste(i, "evaluation resulted in FALSE!"))
 			}
 		}
 		else{
+			print(paste(i,"IS EMPTY"))
 			currentData[i] = ""
 		}
 
@@ -218,7 +225,7 @@ if(who_var == "id3B110"){
 
 #print(outputData) #print
 
-write.csv(outputData, outputFileName, quote=FALSE,row.names = FALSE)
+write.csv(outputData, outputFileName, quote=FALSE, row.names = FALSE, na="")
 
 cat("\n\n\n")
 etm<-proc.time() - ptm # End time

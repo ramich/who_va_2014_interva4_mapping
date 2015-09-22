@@ -1,13 +1,14 @@
-########### WHO VA 2014 -> SmartVA file format mapping ################
+########### WHO VA 2014 -> CSV Coding file format mapping ###############
 ## ----------------------------------------------------------------------
 ##
-## @description: 	Converts 2014 WHO VA Tools submissions to SmartVA file 
-##			format ready to be coded in SmartVA.
-## @input:		mapping file who 2014 -> smartva variables, and
-##			who 2014 submission csv (exported from odk briefcase)
-## @output:		csv for usage in SmartVA
+## @description: 	Converts 2014 WHO VA Tool submissions to a coding file 
+##			format ready to be coded in a VA Coding Software 
+##			(e.g. InterVA4/SmartVA).
+## @input:		mapping file who 2014 -> coding variables, and
+##			who 2014 submission csv (exported from odk aggregate)
+## @output:		csv for usage in coding software
 ## @author: 	RMI
-## @date: 		08.2015
+## @date: 		09.2015
 ##
 ## ----------------------------------------------------------------------
 
@@ -16,7 +17,7 @@
 #load foreach package
 library(foreach)
 
-cat("\nWHO VA Instrument 2014 -> SmartVA Conversion\n\n")
+cat("\nWHO VA Instrument 2014 -> Coding Software Conversion\n\n")
 
 #Clear variables
 rm(list=ls(all=TRUE))
@@ -29,9 +30,9 @@ ptm <- proc.time()
 ######################################################################
 workingDir = "C:/dev/workspace_R/who_va_2014_interva4_mapping/data";
 mappingFileName = "tariff_mapping_full_v3.csv"
-#mappingFileName = "mappings_test.csv"
+#mappingFileName = "interva4_mapping.csv"
 submissionFileName = "who.csv"
-outputFileName = "outputData_tariff.csv"
+outputFileName = "outputData_coding.csv"
 ######################################################################
 
 # store the current directory
@@ -121,7 +122,7 @@ mapValues <- function(from, to, value){
 #Load mapping csv file:
 mapping = read.csv2(mappingFileName, stringsAsFactors=F, dec=".")
 
-#Run through mappings file and fill in value for every SmartVA variable
+#Run through mappings file and fill in value for every mapping variable
 variables_n = nrow(mapping)
 #variables_n = 1 # Limit to first x entries for testing purposes
 
@@ -151,15 +152,6 @@ rows <- foreach(entryCount=1:entries ) %do%{
 
 		assign("current_row", i, envir = .GlobalEnv)
 
-#print(paste(i, "expression", expression))
-#print(paste(i, "mapping_from", mapping_from))
-
-if(destination_var == "ID"){
-	print(paste("we are at",destination_var, ":", dynamic_value))
-	print(paste("Expression:",expression))
-
-}
-		
 		colnames(currentData)[i] <- destination_var
 
 		#Checks
@@ -169,11 +161,11 @@ if(destination_var == "ID"){
 		}
 
 		if(!is.na(fix_value) && nchar(fix_value) > 0 && nchar(expression) == 0){
-			print(paste(i,"CONTAINS fixed ENTRY", fix_value))
+			#print(paste(i,"CONTAINS fixed ENTRY", fix_value))
 			currentData[i] = fix_value
 		}
 		else if(!is.na(dynamic_value) && nchar(dynamic_value) > 0 && nchar(expression) == 0){
-			print(paste(i,"CONTAINS Dynamic ENTRY", dynamic_value))
+			#print(paste(i,"CONTAINS Dynamic ENTRY", dynamic_value))
 			dynamic_value_parsed = eval(parse(text=dynamic_value))
 			if(dynamic_value_parsed != -1){
 				#print(paste(i,"CONTAINS DYNAMIC VALUE::", dynamic_value_parsed))
@@ -184,7 +176,7 @@ if(destination_var == "ID"){
 			}
 		}
 		else if(nchar(who_var) > 0 && nchar(mapping_from) > 0 && nchar(mapping_to) > 0 && nchar(expression) == 0){
-			print(paste(i, "Mapping",mapping_from,"to",mapping_to))
+			#print(paste(i, "Mapping",mapping_from,"to",mapping_to))
 			#print(paste(class(mapping_from), class(mapping_to)))
 			#print(paste("Value:", get(who_var),"(" ,who_var, ")"))
 
@@ -202,16 +194,14 @@ if(destination_var == "ID"){
 			#print(paste("Expression:", expression))
 			evalBool = eval(parse(text=expression))
 			if(evalBool == TRUE){
-				print("Expression fullfilled!")
-print(paste(i,"evaluated to TRUE!!!!!!!!!!!"))
+				#print("Expression fullfilled!")
 				if(!is.na(fix_value) && nchar(fix_value) > 0){
-					print(paste(i,"CONTAINS fixed ENTRY", fix_value))
+					#print(paste(i,"CONTAINS fixed ENTRY", fix_value))
 					currentData[i] = fix_value
 				}
 				else if(!is.na(dynamic_value) && nchar(dynamic_value) > 0){
-					#print(paste(i,"CONTAINS Dynamic ENTRY", dynamic_value))
 					dynamic_value_parsed = eval(parse(text=dynamic_value));
-					print(paste(i,"CONTAINS DYNAMIC ENTRY:", dynamic_value_parsed))
+					#print(paste(i,"CONTAINS DYNAMIC ENTRY:", dynamic_value_parsed))
 					currentData[i] = dynamic_value_parsed
 				}
 			}
@@ -223,7 +213,7 @@ print(paste(i,"evaluated to TRUE!!!!!!!!!!!"))
 			evalBool = eval(parse(text=expression))
 			if(evalBool == TRUE){
 				mapped_value = mapValues(mapping_from, mapping_to, get(who_var))
-				print(paste(i, "Value::", get(who_var), "mapped to", mapped_value))
+				#print(paste(i, "Value::", get(who_var), "mapped to", mapped_value))
 				currentData[i] = mapped_value
 			}
 			else{
@@ -231,7 +221,7 @@ print(paste(i,"evaluated to TRUE!!!!!!!!!!!"))
 			}
 		}
 		else{
-			print(paste(i,"IS EMPTY"))
+			#print(paste(i,"IS EMPTY"))
 			currentData[i] = ""
 		}
 
@@ -246,7 +236,6 @@ print(paste(i,"evaluated to TRUE!!!!!!!!!!!"))
 
 write.csv(outputData, outputFileName, quote=FALSE, row.names = FALSE, na="")
 
-
 cat("\n\n\n")
 etm<-proc.time() - ptm # End time
 print(paste("Total run time:", etm[3], "s")) #print elapsed time
@@ -257,4 +246,4 @@ setwd(initial.dir)
 # unload the libraries
 detach("package:foreach")
 
-cat("\nWHO VA Instrument -> SmartVA Mapping Done!\n\n")
+cat("\nWHO VA Instrument -> Mapping Done!\n\n")
